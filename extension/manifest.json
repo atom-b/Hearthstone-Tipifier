@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Hearthstone Tipifier",
+  "short_name": "HearthTip",
+  "description": "Adds HearthHead tooltips to Hearthstone card names in Reddit posts and comments.",
+  "icons": {
+    "128" : "icon128.png"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://www.reddit.com/r/*"],
+      "js": ["contentscript.js"]
+    }
+  ],
+  "version": "1.0",
+
+  "permissions": [
+    "*://www.reddit.com/"
+  ]
+}
