@@ -3,4 +3,4 @@ A simple Chrome content script that to add HearthHead tooltips to Hearthstone ca
 
 ## Installation
 
-Install via the Chrome web store.
+Install via the [Chrome web store](https://chrome.google.com/webstore/detail/hearthstone-tipifier/jjlnhhnhgfpdnbjmhhihhonpmdackjoe).
