@@ -2241,6 +2241,10 @@ function loadCardData()
 			"name": "nexus-champion saraad",
 			"whid": 2683
 		},
+		"nexus champion saraad": {
+			"name": "nexus-champion saraad",
+			"whid": 2683
+		},
 		"nightblade": {
 			"name": "nightblade",
 			"whid": 670
