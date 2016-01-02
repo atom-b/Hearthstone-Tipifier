@@ -53,7 +53,7 @@ function processTextNode(node, regex, replaceFn)
 		var match = matches[i];
 		var newNode = replaceFn(match[1]);
 		
-		if (newNode == null) return;
+		if (newNode == null) continue;
 
 		// isolate matched text in its own node, replace that node with newNode
 		node.splitText(match.index);
