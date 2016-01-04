@@ -1,7 +1,7 @@
 var postDivClass = "md";
 var cardRegex = /\[\[(.+?)\]\]/ig;
-var baseURL = 'http://www.hearthhead.com/card=';
-var HS_CardObj = loadCardData();
+var hheadCardUrl = 'http://www.hearthhead.com/card=';
+var cardDict = loadCardData();
 
 (function()
 {
@@ -15,7 +15,7 @@ var HS_CardObj = loadCardData();
 		var paragraph = paragraphs[i];
 		var textNodes = findTextNodes(paragraph);
         textNodes.forEach(function(element, index, array) {
-        		processTextNode(element, cardRegex, createCardLink);
+        		linkifyTextNode(element, cardRegex, createCardLink);
         	});
 	};
 
@@ -39,7 +39,7 @@ function findTextNodes(element)
 	return nodes;
 }
 
-function processTextNode(node, regex, replaceFn)
+function linkifyTextNode(node, regex, replaceFn)
 {
 	var match, 
 		matches = [];
@@ -65,12 +65,12 @@ function processTextNode(node, regex, replaceFn)
 function createCardLink(cardName)
 {
 	// find card object with name of card text
-	var card = HS_CardObj[cardName.toLowerCase()];
+	var card = cardDict[cardName.toLowerCase()];
 	if (card == null) return;
 
 	// construct HearthHead link
 	var link = document.createElement('a');
-	link.href = baseURL + card.whid;
+	link.href = hheadCardUrl + card.whid;
 	link.target = '_blank';
 	link.innerHTML = cardName;
 
