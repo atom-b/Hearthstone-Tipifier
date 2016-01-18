@@ -1,3 +1,4 @@
+var commentAreaClass = "commentarea";
 var postDivClass = "md";
 var cardRegex = /\[\[(.+?)\]\]/ig;
 var hheadCardUrl = 'http://www.hearthhead.com/card=';
@@ -5,23 +6,57 @@ var cardDict = loadCardData();
 
 (function()
 {
-	var postDivs = document.getElementsByClassName(postDivClass);
+	linkify(document);
+
+	// listen for and process any DOM mutations	
+	subscribeDomMuations();
+
+	// add HearthHead tooltip scripts
+	addTooltips();
+}());
+
+function subscribeDomMuations()
+{
+	var commentArea = document.getElementsByClassName(commentAreaClass);
+
+	var insertedNodes = [];
+	var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			for (var i = mutation.addedNodes.length - 1; i >= 0; i--) {
+				var node = mutation.addedNodes[i];
+				linkify(node);
+			}
+		});
+	});
+
+	observer.observe(commentArea[0], { childList: true, subtree: true });
+}
+
+function linkify(postsRootElement)
+{
+	if (!postsRootElement) return;
+	if (!postsRootElement.getElementsByClassName) return;
+
+	var postDivs = postsRootElement.getElementsByClassName(postDivClass);
 	var paragraphs = [];
+
 	for (var i = postDivs.length - 1; i >= 0; i--) {
 		Array.prototype.push.apply(paragraphs, postDivs[i].getElementsByTagName("p"));
 	};
 
 	for (var i = paragraphs.length - 1; i >= 0; i--) {
 		var paragraph = paragraphs[i];
+
+		// Don't linkify a paragraph we've already linkified
+		if (paragraph.linkified) continue;
+		paragraph.linkified = true;
+
 		var textNodes = findTextNodes(paragraph);
         textNodes.forEach(function(element, index, array) {
-        		linkifyTextNode(element, cardRegex, createCardLink);
-        	});
+    		linkifyTextNode(element, cardRegex, createCardLink);
+    	});
 	};
-
-	// add HearthHead tooltips after we've linkified all the card names
-	addTooltips();
-}());
+}
 
 function findTextNodes(element)
 {
