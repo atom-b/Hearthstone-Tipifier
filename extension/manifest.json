@@ -13,7 +13,7 @@
       "js": ["contentscript.js"]
     }
   ],
-  "version": "1.0.1",
+  "version": "1.1",
 
   "permissions": [
     "*://www.reddit.com/"
