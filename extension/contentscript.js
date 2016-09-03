@@ -1,7 +1,8 @@
 var commentAreaClass = "commentarea";
 var postDivClass = "md";
 var cardRegex = /\[\[(.+?)\]\]/ig;
-var hheadCardUrl = 'http://www.hearthhead.com/card=';
+var hheadCardUrl = "//www.hearthhead.com/card=";
+var hheadScriptUrl = "//wow.zamimg.com/widgets/power.js"
 var cardDict = loadCardData();
 
 (function()
@@ -52,9 +53,9 @@ function linkify(postsRootElement)
 		paragraph.linkified = true;
 
 		var textNodes = findTextNodes(paragraph);
-        textNodes.forEach(function(element, index, array) {
-    		linkifyTextNode(element, cardRegex, createCardLink);
-    	});
+		textNodes.forEach(function(element, index, array) {
+			linkifyTextNode(element, cardRegex, createCardLink);
+		});
 	};
 }
 
@@ -92,8 +93,8 @@ function linkifyTextNode(node, regex, replaceFn)
 
 		// isolate matched text in its own node, replace that node with newNode
 		node.splitText(match.index);
-        node.nextSibling.splitText(match[0].length);
-        node.parentNode.replaceChild(newNode, node.nextSibling);
+		node.nextSibling.splitText(match[0].length);
+		node.parentNode.replaceChild(newNode, node.nextSibling);
 	};
 }
 
@@ -116,7 +117,7 @@ function addTooltips()
 {
 	var whScriptElement = document.createElement('script');
 	whScriptElement.type = 'text/javascript';
-	whScriptElement.src = 'https://static.wowhead.com/widgets/power.js';
+	whScriptElement.src = hheadScriptUrl;
 	document.getElementsByTagName('head')[0].appendChild(whScriptElement);
 
 	var whVarsElement = document.createElement('script');
@@ -128,3329 +129,3957 @@ function addTooltips()
 function loadCardData()
 {
 	return {
-		"abomination": {
-			"name": "abomination",
-			"whid": 440
-		},
-		"abusive sergeant": {
-			"name": "abusive sergeant",
-			"whid": 242
-		},
-		"acidic swamp ooze": {
-			"name": "acidic swamp ooze",
-			"whid": 906
-		},
-		"acidmaw": {
-			"name": "acidmaw",
-			"whid": 2633
-		},
-		"acolyte of pain": {
-			"name": "acolyte of pain",
-			"whid": 1659
-		},
-		"al'akir the windlord": {
-			"name": "al'akir the windlord",
-			"whid": 32
-		},
-		"alarm-o-bot": {
-			"name": "alarm-o-bot",
-			"whid": 1658
-		},
-		"aldor peacekeeper": {
-			"name": "aldor peacekeeper",
-			"whid": 1167
-		},
-		"alexstrasza": {
-			"name": "alexstrasza",
-			"whid": 581
-		},
-		"alexstrasza's champion": {
-			"name": "alexstrasza's champion",
-			"whid": 2758
-		},
-		"amani berserker": {
-			"name": "amani berserker",
-			"whid": 790
-		},
-		"ancestor's call": {
-			"name": "ancestor's call",
-			"whid": 1998
-		},
-		"ancestral healing": {
-			"name": "ancestral healing",
-			"whid": 149
-		},
-		"ancestral knowledge": {
-			"name": "ancestral knowledge",
-			"whid": 2514
-		},
-		"ancestral spirit": {
-			"name": "ancestral spirit",
-			"whid": 404
-		},
-		"ancient brewmaster": {
-			"name": "ancient brewmaster",
-			"whid": 186
-		},
-		"ancient mage": {
-			"name": "ancient mage",
-			"whid": 915
-		},
-		"ancient secrets": {
-			"name": "ancient secrets",
-			"whid": 209
-		},
-		"ancient shade": {
-			"name": "ancient shade",
-			"whid": 9081
-		},
-		"ancient teachings": {
-			"name": "ancient teachings",
-			"whid": 313
-		},
-		"ancient watcher": {
-			"name": "ancient watcher",
-			"whid": 605
-		},
-		"ancient of lore": {
-			"name": "ancient of lore",
-			"whid": 920
-		},
-		"ancient of war": {
-			"name": "ancient of war",
-			"whid": 1035
-		},
-		"angry chicken": {
-			"name": "angry chicken",
-			"whid": 1688
-		},
-		"anima golem": {
-			"name": "anima golem",
-			"whid": 2045
-		},
-		"animal companion": {
-			"name": "animal companion",
-			"whid": 437
-		},
-		"animated armor": {
-			"name": "animated armor",
-			"whid": 36111
-		},
-		"annoy-o-tron": {
-			"name": "annoy-o-tron",
-			"whid": 2053
-		},
-		"anodized robo cub": {
-			"name": "anodized robo cub",
-			"whid": 2096
-		},
-		"antique healbot": {
-			"name": "antique healbot",
-			"whid": 2037
-		},
-		"anub'ar ambusher": {
-			"name": "anub'ar ambusher",
-			"whid": 1810
-		},
-		"anub'arak": {
-			"name": "anub'arak",
-			"whid": 2586
-		},
-		"anubisath sentinel": {
-			"name": "anubisath sentinel",
-			"whid": 2933
-		},
-		"anyfin can happen": {
-			"name": "anyfin can happen",
-			"whid": 2898
-		},
-		"arathi weaponsmith": {
-			"name": "arathi weaponsmith",
-			"whid": 538
-		},
-		"arcane blast": {
-			"name": "arcane blast",
-			"whid": 2572
-		},
-		"arcane explosion": {
-			"name": "arcane explosion",
-			"whid": 447
-		},
-		"arcane golem": {
-			"name": "arcane golem",
-			"whid": 466
-		},
-		"arcane intellect": {
-			"name": "arcane intellect",
-			"whid": 555
-		},
-		"arcane missiles": {
-			"name": "arcane missiles",
-			"whid": 564
-		},
-		"arcane nullifier x-21": {
-			"name": "arcane nullifier x-21",
-			"whid": 2059
-		},
-		"arcane shot": {
-			"name": "arcane shot",
-			"whid": 877
-		},
-		"arcanite reaper": {
-			"name": "arcanite reaper",
-			"whid": 304
-		},
-		"arch-thief rafaam": {
-			"name": "arch-thief rafaam",
-			"whid": 2964
-		},
-		"archmage": {
-			"name": "archmage",
-			"whid": 525
-		},
-		"archmage antonidas": {
-			"name": "archmage antonidas",
-			"whid": 1080
-		},
-		"argent commander": {
-			"name": "argent commander",
-			"whid": 281
-		},
-		"argent horserider": {
-			"name": "argent horserider",
-			"whid": 2490
-		},
-		"argent lance": {
-			"name": "argent lance",
-			"whid": 2720
-		},
-		"argent protector": {
-			"name": "argent protector",
-			"whid": 1022
-		},
-		"argent squire": {
-			"name": "argent squire",
-			"whid": 757
-		},
-		"argent watchman": {
-			"name": "argent watchman",
-			"whid": 2505
-		},
-		"armor plating": {
-			"name": "armor plating",
-			"whid": 2151
-		},
-		"armor up": {
-			"name": "armor up",
-			"whid": 725
-		},
-		"armored warhorse": {
-			"name": "armored warhorse",
-			"whid": 2627
-		},
-		"armorsmith": {
-			"name": "armorsmith",
-			"whid": 596
-		},
-		"ashbringer": {
-			"name": "ashbringer",
-			"whid": 1730
-		},
-		"assassin's blade": {
-			"name": "assassin's blade",
-			"whid": 421
-		},
-		"assassinate": {
-			"name": "assassinate",
-			"whid": 345
-		},
-		"astral communion": {
-			"name": "astral communion",
-			"whid": 2785
-		},
-		"auchenai soulpriest": {
-			"name": "auchenai soulpriest",
-			"whid": 237
-		},
-		"avenge": {
-			"name": "avenge",
-			"whid": 1804
-		},
-		"avenging wrath": {
-			"name": "avenging wrath",
-			"whid": 1174
-		},
-		"aviana": {
-			"name": "aviana",
-			"whid": 2796
-		},
-		"axe flinger": {
-			"name": "axe flinger",
-			"whid": 2297
-		},
-		"azure drake": {
-			"name": "azure drake",
-			"whid": 825
-		},
-		"backstab": {
-			"name": "backstab",
-			"whid": 180
-		},
-		"baine bloodhoof": {
-			"name": "baine bloodhoof",
-			"whid": 318
-		},
-		"ball of spiders": {
-			"name": "ball of spiders",
-			"whid": 2483
-		},
-		"banana": {
-			"name": "banana",
-			"whid": 1694
-		},
-		"bane of doom": {
-			"name": "bane of doom",
-			"whid": 23
-		},
-		"baron geddon": {
-			"name": "baron geddon",
-			"whid": 336
-		},
-		"baron rivendare": {
-			"name": "baron rivendare",
-			"whid": 1915
-		},
-		"bash": {
-			"name": "bash",
-			"whid": 2729
-		},
-		"battle axe": {
-			"name": "battle axe",
-			"whid": 1707
-		},
-		"battle rage": {
-			"name": "battle rage",
-			"whid": 400
-		},
-		"bear form": {
-			"name": "bear form",
-			"whid": 99
-		},
-		"bear trap": {
-			"name": "bear trap",
-			"whid": 2641
-		},
-		"beneath the grounds": {
-			"name": "beneath the grounds",
-			"whid": 2587
-		},
-		"bestial wrath": {
-			"name": "bestial wrath",
-			"whid": 903
-		},
-		"betrayal": {
-			"name": "betrayal",
-			"whid": 282
-		},
-		"big game hunter": {
-			"name": "big game hunter",
-			"whid": 1657
-		},
-		"bite": {
-			"name": "bite",
-			"whid": 577
-		},
-		"black knight": {
-			"name": "black knight",
-			"whid": 1656
-		},
-		"blackwing corruptor": {
-			"name": "blackwing corruptor",
-			"whid": 2409
-		},
-		"blackwing technician": {
-			"name": "blackwing technician",
-			"whid": 2408
-		},
-		"blade flurry": {
-			"name": "blade flurry",
-			"whid": 1064
-		},
-		"blessed champion": {
-			"name": "blessed champion",
-			"whid": 1522
-		},
-		"blessing of kings": {
-			"name": "blessing of kings",
-			"whid": 943
-		},
-		"blessing of might": {
-			"name": "blessing of might",
-			"whid": 70
-		},
-		"blessing of wisdom": {
-			"name": "blessing of wisdom",
-			"whid": 1373
-		},
-		"blingtron 3000": {
-			"name": "blingtron 3000",
-			"whid": 2087
-		},
-		"blizzard": {
-			"name": "blizzard",
-			"whid": 457
-		},
-		"blood fury": {
-			"name": "blood fury",
-			"whid": 1660
-		},
-		"blood imp": {
-			"name": "blood imp",
-			"whid": 469
-		},
-		"blood knight": {
-			"name": "blood knight",
-			"whid": 755
-		},
-		"bloodfen raptor": {
-			"name": "bloodfen raptor",
-			"whid": 216
-		},
-		"bloodlust": {
-			"name": "bloodlust",
-			"whid": 1171
-		},
-		"bloodmage thalnos": {
-			"name": "bloodmage thalnos",
-			"whid": 749
-		},
-		"bloodsail corsair": {
-			"name": "bloodsail corsair",
-			"whid": 997
-		},
-		"bloodsail raider": {
-			"name": "bloodsail raider",
-			"whid": 999
-		},
-		"bluegill warrior": {
-			"name": "bluegill warrior",
-			"whid": 739
-		},
-		"boar": {
-			"name": "boar",
-			"whid": 298
-		},
-		"bolf ramshield": {
-			"name": "bolf ramshield",
-			"whid": 2595
-		},
-		"bolster": {
-			"name": "bolster",
-			"whid": 2754
-		},
-		"bolvar fordragon": {
-			"name": "bolvar fordragon",
-			"whid": 2031
-		},
-		"bomb lobber": {
-			"name": "bomb lobber",
-			"whid": 2067
-		},
-		"boneguard lieutenant": {
-			"name": "boneguard lieutenant",
-			"whid": 2495
-		},
-		"boom bot": {
-			"name": "boom bot",
-			"whid": 2235
-		},
-		"booty bay bodyguard": {
-			"name": "booty bay bodyguard",
-			"whid": 1140
-		},
-		"boulderfist ogre": {
-			"name": "boulderfist ogre",
-			"whid": 1686
-		},
-		"bouncing blade": {
-			"name": "bouncing blade",
-			"whid": 2018
-		},
-		"brann bronzebeard": {
-			"name": "brann bronzebeard",
-			"whid": 2949
-		},
-		"brave archer": {
-			"name": "brave archer",
-			"whid": 2642
-		},
-		"brawl": {
-			"name": "brawl",
-			"whid": 75
-		},
-		"buccaneer": {
-			"name": "buccaneer",
-			"whid": 2715
-		},
-		"burgle": {
-			"name": "burgle",
-			"whid": 2770
-		},
-		"burly rockjaw trogg": {
-			"name": "burly rockjaw trogg",
-			"whid": 2036
-		},
-		"burrowing mine": {
-			"name": "burrowing mine",
-			"whid": 2221
-		},
-		"cabal shadow priest": {
-			"name": "cabal shadow priest",
-			"whid": 272
-		},
-		"cairne bloodhoof": {
-			"name": "cairne bloodhoof",
-			"whid": 420
-		},
-		"call pet": {
-			"name": "call pet",
-			"whid": 2094
-		},
-		"captain greenskin": {
-			"name": "captain greenskin",
-			"whid": 456
-		},
-		"captain's parrot": {
-			"name": "captain's parrot",
-			"whid": 530
-		},
-		"captured jormungar": {
-			"name": "captured jormungar",
-			"whid": 2522
-		},
-		"cat form": {
-			"name": "cat form",
-			"whid": 63
-		},
-		"cenarius": {
-			"name": "cenarius",
-			"whid": 36
-		},
-		"charge": {
-			"name": "charge",
-			"whid": 344
-		},
-		"charged hammer": {
-			"name": "charged hammer",
-			"whid": 2617
-		},
-		"chicken": {
-			"name": "chicken",
-			"whid": 262
-		},
-		"chillmaw": {
-			"name": "chillmaw",
-			"whid": 2682
-		},
-		"chillwind yeti": {
-			"name": "chillwind yeti",
-			"whid": 90
-		},
-		"chromaggus": {
-			"name": "chromaggus",
-			"whid": 2280
-		},
-		"circle of healing": {
-			"name": "circle of healing",
-			"whid": 1362
-		},
-		"claw": {
-			"name": "claw",
-			"whid": 1050
-		},
-		"cleave": {
-			"name": "cleave",
-			"whid": 940
-		},
-		"clockwork giant": {
-			"name": "clockwork giant",
-			"whid": 2233
-		},
-		"clockwork gnome": {
-			"name": "clockwork gnome",
-			"whid": 2050
-		},
-		"clockwork knight": {
-			"name": "clockwork knight",
-			"whid": 2500
-		},
-		"cobalt guardian": {
-			"name": "cobalt guardian",
-			"whid": 2030
-		},
-		"cobra shot": {
-			"name": "cobra shot",
-			"whid": 2041
-		},
-		"coghammer": {
-			"name": "coghammer",
-			"whid": 2027
-		},
-		"cogmaster": {
-			"name": "cogmaster",
-			"whid": 1932
-		},
-		"cogmaster's wrench": {
-			"name": "cogmaster's wrench",
-			"whid": 1989
-		},
-		"cold blood": {
-			"name": "cold blood",
-			"whid": 268
-		},
-		"coldarra drake": {
-			"name": "coldarra drake",
-			"whid": 2544
-		},
-		"coldlight oracle": {
-			"name": "coldlight oracle",
-			"whid": 1016
-		},
-		"coldlight seer": {
-			"name": "coldlight seer",
-			"whid": 453
-		},
-		"coliseum manager": {
-			"name": "coliseum manager",
-			"whid": 2585
-		},
-		"commanding shout": {
-			"name": "commanding shout",
-			"whid": 1026
-		},
-		"competitive spirit": {
-			"name": "competitive spirit",
-			"whid": 2648
-		},
-		"conceal": {
-			"name": "conceal",
-			"whid": 990
-		},
-		"cone of cold": {
-			"name": "cone of cold",
-			"whid": 430
-		},
-		"confessor paletress": {
-			"name": "confessor paletress",
-			"whid": 2556
-		},
-		"confuse": {
-			"name": "confuse",
-			"whid": 2564
-		},
-		"consecration": {
-			"name": "consecration",
-			"whid": 476
-		},
-		"convert": {
-			"name": "convert",
-			"whid": 2563
-		},
-		"core hound": {
-			"name": "core hound",
-			"whid": 1687
-		},
-		"core rager": {
-			"name": "core rager",
-			"whid": 2263
-		},
-		"corruption": {
-			"name": "corruption",
-			"whid": 982
-		},
-		"counterspell": {
-			"name": "counterspell",
-			"whid": 113
-		},
-		"crackle": {
-			"name": "crackle",
-			"whid": 2006
-		},
-		"crazed alchemist": {
-			"name": "crazed alchemist",
-			"whid": 801
-		},
-		"crowd favorite": {
-			"name": "crowd favorite",
-			"whid": 2518
-		},
-		"cruel taskmaster": {
-			"name": "cruel taskmaster",
-			"whid": 285
-		},
-		"crush": {
-			"name": "crush",
-			"whid": 2020
-		},
-		"cult master": {
-			"name": "cult master",
-			"whid": 811
-		},
-		"curse of rafaam": {
-			"name": "curse of rafaam",
-			"whid": 2879
-		},
-		"cursed blade": {
-			"name": "cursed blade",
-			"whid": 35025
-		},
-		"cutpurse": {
-			"name": "cutpurse",
-			"whid": 2766
-		},
-		"dagger mastery": {
-			"name": "dagger mastery",
-			"whid": 730
-		},
-		"dalaran aspirant": {
-			"name": "dalaran aspirant",
-			"whid": 2549
-		},
-		"dalaran mage": {
-			"name": "dalaran mage",
-			"whid": 175
-		},
-		"damaged golem": {
-			"name": "damaged golem",
-			"whid": 471
-		},
-		"dancing swords": {
-			"name": "dancing swords",
-			"whid": 1913
-		},
-		"dark bargain": {
-			"name": "dark bargain",
-			"whid": 2632
-		},
-		"dark cultist": {
-			"name": "dark cultist",
-			"whid": 1807
-		},
-		"dark iron dwarf": {
-			"name": "dark iron dwarf",
-			"whid": 348
-		},
-		"dark iron skulker": {
-			"name": "dark iron skulker",
-			"whid": 2291
-		},
-		"dark peddler": {
-			"name": "dark peddler",
-			"whid": 2895
-		},
-		"dark wispers": {
-			"name": "dark wispers",
-			"whid": 2009
-		},
-		"darkbomb": {
-			"name": "darkbomb",
-			"whid": 2093
-		},
-		"darkscale healer": {
-			"name": "darkscale healer",
-			"whid": 582
-		},
-		"darnassus aspirant": {
-			"name": "darnassus aspirant",
-			"whid": 2782
-		},
-		"dart trap": {
-			"name": "dart trap",
-			"whid": 2893
-		},
-		"deadly poison": {
-			"name": "deadly poison",
-			"whid": 459
-		},
-		"deadly shot": {
-			"name": "deadly shot",
-			"whid": 1093
-		},
-		"death's bite": {
-			"name": "death's bite",
-			"whid": 1805
-		},
-		"deathlord": {
-			"name": "deathlord",
-			"whid": 1790
-		},
-		"deathwing": {
-			"name": "deathwing",
-			"whid": 834
-		},
-		"defender": {
-			"name": "defender",
-			"whid": 102
-		},
-		"defender of argus": {
-			"name": "defender of argus",
-			"whid": 763
-		},
-		"defias bandit": {
-			"name": "defias bandit",
-			"whid": 488
-		},
-		"defias ringleader": {
-			"name": "defias ringleader",
-			"whid": 201
-		},
-		"demigod's favor": {
-			"name": "demigod's favor",
-			"whid": 1145
-		},
-		"demolisher": {
-			"name": "demolisher",
-			"whid": 979
-		},
-		"demonfire": {
-			"name": "demonfire",
-			"whid": 1142
-		},
-		"demonfuse": {
-			"name": "demonfuse",
-			"whid": 2535
-		},
-		"demonheart": {
-			"name": "demonheart",
-			"whid": 1985
-		},
-		"demonwrath": {
-			"name": "demonwrath",
-			"whid": 2301
-		},
-		"desert camel": {
-			"name": "desert camel",
-			"whid": 2892
-		},
-		"devilsaur": {
-			"name": "devilsaur",
-			"whid": 332
-		},
-		"dire wolf alpha": {
-			"name": "dire wolf alpha",
-			"whid": 985
-		},
-		"dispel": {
-			"name": "dispel",
-			"whid": 321
-		},
-		"divine favor": {
-			"name": "divine favor",
-			"whid": 679
-		},
-		"divine spirit": {
-			"name": "divine spirit",
-			"whid": 1361
-		},
-		"djinni of zephyrs": {
-			"name": "djinni of zephyrs",
-			"whid": 2925
-		},
-		"doomguard": {
-			"name": "doomguard",
-			"whid": 631
-		},
-		"doomhammer": {
-			"name": "doomhammer",
-			"whid": 352
-		},
-		"doomsayer": {
-			"name": "doomsayer",
-			"whid": 138
-		},
-		"dr. boom": {
-			"name": "dr. boom",
-			"whid": 2078
-		},
-		"draenei totemcarver": {
-			"name": "draenei totemcarver",
-			"whid": 2613
-		},
-		"dragon consort": {
-			"name": "dragon consort",
-			"whid": 2299
-		},
-		"dragon egg": {
-			"name": "dragon egg",
-			"whid": 2278
-		},
-		"dragon's breath": {
-			"name": "dragon's breath",
-			"whid": 2284
-		},
-		"dragonhawk rider": {
-			"name": "dragonhawk rider",
-			"whid": 2533
-		},
-		"dragonkin sorcerer": {
-			"name": "dragonkin sorcerer",
-			"whid": 2306
-		},
-		"dragonling mechanic": {
-			"name": "dragonling mechanic",
-			"whid": 523
-		},
-		"drain life": {
-			"name": "drain life",
-			"whid": 919
-		},
-		"drakonid crusher": {
-			"name": "drakonid crusher",
-			"whid": 2257
-		},
-		"dread corsair": {
-			"name": "dread corsair",
-			"whid": 878
-		},
-		"dread infernal": {
-			"name": "dread infernal",
-			"whid": 1019
-		},
-		"dreadscale": {
-			"name": "dreadscale",
-			"whid": 2634
-		},
-		"dreadsteed": {
-			"name": "dreadsteed",
-			"whid": 2822
-		},
-		"dream": {
-			"name": "dream",
-			"whid": 808
-		},
-		"druid of the claw": {
-			"name": "druid of the claw",
-			"whid": 692
-		},
-		"druid of the fang": {
-			"name": "druid of the fang",
-			"whid": 2048
-		},
-		"druid of the flame": {
-			"name": "druid of the flame",
-			"whid": 2292
-		},
-		"druid of the saber": {
-			"name": "druid of the saber",
-			"whid": 2783
-		},
-		"dunemaul shaman": {
-			"name": "dunemaul shaman",
-			"whid": 2034
-		},
-		"duplicate": {
-			"name": "duplicate",
-			"whid": 1801
-		},
-		"dust devil": {
-			"name": "dust devil",
-			"whid": 618
-		},
-		"eadric the pure": {
-			"name": "eadric the pure",
-			"whid": 2727
-		},
-		"eaglehorn bow": {
-			"name": "eaglehorn bow",
-			"whid": 1662
-		},
-		"earth elemental": {
-			"name": "earth elemental",
-			"whid": 1141
-		},
-		"earth shock": {
-			"name": "earth shock",
-			"whid": 767
-		},
-		"earthen ring farseer": {
-			"name": "earthen ring farseer",
-			"whid": 1651
-		},
-		"echo of medivh": {
-			"name": "echo of medivh",
-			"whid": 1941
-		},
-		"echoing ooze": {
-			"name": "echoing ooze",
-			"whid": 1858
-		},
-		"edwin vancleef": {
-			"name": "edwin vancleef",
-			"whid": 306
-		},
-		"eerie statue": {
-			"name": "eerie statue",
-			"whid": 9107
-		},
-		"effigy": {
-			"name": "effigy",
-			"whid": 2541
-		},
-		"elemental destruction": {
-			"name": "elemental destruction",
-			"whid": 2620
-		},
-		"elise starseeker": {
-			"name": "elise starseeker",
-			"whid": 2951
-		},
-		"elite tauren chieftain": {
-			"name": "elite tauren chieftain",
-			"whid": 1754
-		},
-		"elven archer": {
-			"name": "elven archer",
-			"whid": 389
-		},
-		"emboldener 3000": {
-			"name": "emboldener 3000",
-			"whid": 52
-		},
-		"emerald drake": {
-			"name": "emerald drake",
-			"whid": 489
-		},
-		"emergency coolant": {
-			"name": "emergency coolant",
-			"whid": 2155
-		},
-		"emperor cobra": {
-			"name": "emperor cobra",
-			"whid": 1098
-		},
-		"emperor thaurissan": {
-			"name": "emperor thaurissan",
-			"whid": 2262
-		},
-		"enhance-o-mechano": {
-			"name": "enhance-o-mechano",
-			"whid": 2075
-		},
-		"enter the coliseum": {
-			"name": "enter the coliseum",
-			"whid": 2654
-		},
-		"entomb": {
-			"name": "entomb",
-			"whid": 3015
-		},
-		"equality": {
-			"name": "equality",
-			"whid": 756
-		},
-		"ethereal arcanist": {
-			"name": "ethereal arcanist",
-			"whid": 1737
-		},
-		"ethereal conjurer": {
-			"name": "ethereal conjurer",
-			"whid": 2875
-		},
-		"everyfin is awesome": {
-			"name": "everyfin is awesome",
-			"whid": 3007
-		},
-		"evil heckler": {
-			"name": "evil heckler",
-			"whid": 2752
-		},
-		"eviscerate": {
-			"name": "eviscerate",
-			"whid": 904
-		},
-		"excavated evil": {
-			"name": "excavated evil",
-			"whid": 2999
-		},
-		"excess mana": {
-			"name": "excess mana",
-			"whid": 1725
-		},
-		"execute": {
-			"name": "execute",
-			"whid": 785
-		},
-		"explorer's hat": {
-			"name": "explorer's hat",
-			"whid": 3001
-		},
-		"explosive sheep": {
-			"name": "explosive sheep",
-			"whid": 2044
-		},
-		"explosive shot": {
-			"name": "explosive shot",
-			"whid": 394
-		},
-		"explosive trap": {
-			"name": "explosive trap",
-			"whid": 585
-		},
-		"eydis darkbane": {
-			"name": "eydis darkbane",
-			"whid": 2519
-		},
-		"eye for an eye": {
-			"name": "eye for an eye",
-			"whid": 462
-		},
-		"faceless manipulator": {
-			"name": "faceless manipulator",
-			"whid": 531
-		},
-		"faerie dragon": {
-			"name": "faerie dragon",
-			"whid": 609
-		},
-		"fallen hero": {
-			"name": "fallen hero",
-			"whid": 2545
-		},
-		"fan of knives": {
-			"name": "fan of knives",
-			"whid": 667
-		},
-		"far sight": {
-			"name": "far sight",
-			"whid": 818
-		},
-		"fearsome doomguard": {
-			"name": "fearsome doomguard",
-			"whid": 2624
-		},
-		"feign death": {
-			"name": "feign death",
-			"whid": 1991
-		},
-		"fel cannon": {
-			"name": "fel cannon",
-			"whid": 1997
-		},
-		"fel reaver": {
-			"name": "fel reaver",
-			"whid": 1982
-		},
-		"felguard": {
-			"name": "felguard",
-			"whid": 517
-		},
-		"fen creeper": {
-			"name": "fen creeper",
-			"whid": 602
-		},
-		"fencing coach": {
-			"name": "fencing coach",
-			"whid": 2581
-		},
-		"feral spirit": {
-			"name": "feral spirit",
-			"whid": 238
-		},
-		"feugen": {
-			"name": "feugen",
-			"whid": 1797
-		},
-		"fierce monkey": {
-			"name": "fierce monkey",
-			"whid": 2894
-		},
-		"fiery war axe": {
-			"name": "fiery war axe",
-			"whid": 401
-		},
-		"finicky cloakfield": {
-			"name": "finicky cloakfield",
-			"whid": 2154
-		},
-		"finkle einhorn": {
-			"name": "finkle einhorn",
-			"whid": 1006
-		},
-		"fire elemental": {
-			"name": "fire elemental",
-			"whid": 189
-		},
-		"fireball": {
-			"name": "fireball",
-			"whid": 315
-		},
-		"fireblast": {
-			"name": "fireblast",
-			"whid": 807
-		},
-		"fireguard destroyer": {
-			"name": "fireguard destroyer",
-			"whid": 2290
-		},
-		"fist of jaraxxus": {
-			"name": "fist of jaraxxus",
-			"whid": 2628
-		},
-		"fjola lightbane": {
-			"name": "fjola lightbane",
-			"whid": 2748
-		},
-		"flame imp": {
-			"name": "flame imp",
-			"whid": 1090
-		},
-		"flame juggler": {
-			"name": "flame juggler",
-			"whid": 2580
-		},
-		"flame lance": {
-			"name": "flame lance",
-			"whid": 2539
-		},
-		"flame leviathan": {
-			"name": "flame leviathan",
-			"whid": 1939
-		},
-		"flame of azzinoth": {
-			"name": "flame of azzinoth",
-			"whid": 1751
-		},
-		"flamecannon": {
-			"name": "flamecannon",
-			"whid": 1927
-		},
-		"flamestrike": {
-			"name": "flamestrike",
-			"whid": 1004
-		},
-		"flametongue totem": {
-			"name": "flametongue totem",
-			"whid": 1008
-		},
-		"flamewaker": {
-			"name": "flamewaker",
-			"whid": 2275
-		},
-		"flare": {
-			"name": "flare",
-			"whid": 896
-		},
-		"flash heal": {
-			"name": "flash heal",
-			"whid": 2582
-		},
-		"flesheating ghoul": {
-			"name": "flesheating ghoul",
-			"whid": 397
-		},
-		"floating watcher": {
-			"name": "floating watcher",
-			"whid": 2068
-		},
-		"flying machine": {
-			"name": "flying machine",
-			"whid": 2052
-		},
-		"foe reaper 4000": {
-			"name": "foe reaper 4000",
-			"whid": 2081
-		},
-		"force of nature": {
-			"name": "force of nature",
-			"whid": 493
-		},
-		"force-tank max": {
-			"name": "force-tank max",
-			"whid": 2047
-		},
-		"forgotten torch": {
-			"name": "forgotten torch",
-			"whid": 2874
-		},
-		"forked lightning": {
-			"name": "forked lightning",
-			"whid": 299
-		},
-		"fossilized devilsaur": {
-			"name": "fossilized devilsaur",
-			"whid": 2945
-		},
-		"freezing trap": {
-			"name": "freezing trap",
-			"whid": 519
-		},
-		"frigid snobold": {
-			"name": "frigid snobold",
-			"whid": 2532
-		},
-		"frog": {
-			"name": "frog",
-			"whid": 548
-		},
-		"frost elemental": {
-			"name": "frost elemental",
-			"whid": 512
-		},
-		"frost giant": {
-			"name": "frost giant",
-			"whid": 2512
-		},
-		"frost nova": {
-			"name": "frost nova",
-			"whid": 587
-		},
-		"frost shock": {
-			"name": "frost shock",
-			"whid": 971
-		},
-		"frostbolt": {
-			"name": "frostbolt",
-			"whid": 662
-		},
-		"frostwolf grunt": {
-			"name": "frostwolf grunt",
-			"whid": 41
-		},
-		"frostwolf warlord": {
-			"name": "frostwolf warlord",
-			"whid": 496
-		},
-		"frothing berserker": {
-			"name": "frothing berserker",
-			"whid": 654
-		},
-		"gadgetzan auctioneer": {
-			"name": "gadgetzan auctioneer",
-			"whid": 932
-		},
-		"gadgetzan jouster": {
-			"name": "gadgetzan jouster",
-			"whid": 2818
-		},
-		"gahz'rilla": {
-			"name": "gahz'rilla",
-			"whid": 2017
-		},
-		"gallywix's coin": {
-			"name": "gallywix's coin",
-			"whid": 2277
-		},
-		"gang up": {
-			"name": "gang up",
-			"whid": 2304
-		},
-		"garrison commander": {
-			"name": "garrison commander",
-			"whid": 2517
-		},
-		"gazlowe": {
-			"name": "gazlowe",
-			"whid": 2085
-		},
-		"gelbin mekkatorque": {
-			"name": "gelbin mekkatorque",
-			"whid": 858
-		},
-		"gilblin stalker": {
-			"name": "gilblin stalker",
-			"whid": 2049
-		},
-		"gladiator's longbow": {
-			"name": "gladiator's longbow",
-			"whid": 311
-		},
-		"glaivezooka": {
-			"name": "glaivezooka",
-			"whid": 2011
-		},
-		"gnoll": {
-			"name": "gnoll",
-			"whid": 460
-		},
-		"gnomeregan infantry": {
-			"name": "gnomeregan infantry",
-			"whid": 2066
-		},
-		"gnomish experimenter": {
-			"name": "gnomish experimenter",
-			"whid": 2060
-		},
-		"gnomish inventor": {
-			"name": "gnomish inventor",
-			"whid": 308
-		},
-		"goblin auto-barber": {
-			"name": "goblin auto-barber",
-			"whid": 1988
-		},
-		"goblin blastmage": {
-			"name": "goblin blastmage",
-			"whid": 1934
-		},
-		"goblin sapper": {
-			"name": "goblin sapper",
-			"whid": 2063
-		},
-		"goldshire footman": {
-			"name": "goldshire footman",
-			"whid": 922
-		},
-		"gorehowl": {
-			"name": "gorehowl",
-			"whid": 810
-		},
-		"gorillabot a-3": {
-			"name": "gorillabot a-3",
-			"whid": 2911
-		},
-		"gormok the impaler": {
-			"name": "gormok the impaler",
-			"whid": 2724
-		},
-		"grand crusader": {
-			"name": "grand crusader",
-			"whid": 2510
-		},
-		"grim patron": {
-			"name": "grim patron",
-			"whid": 2279
-		},
-		"grimscale oracle": {
-			"name": "grimscale oracle",
-			"whid": 510
-		},
-		"grommash hellscream": {
-			"name": "grommash hellscream",
-			"whid": 338
-		},
-		"grove tender": {
-			"name": "grove tender",
-			"whid": 2225
-		},
-		"gruul": {
-			"name": "gruul",
-			"whid": 526
-		},
-		"guardian of kings": {
-			"name": "guardian of kings",
-			"whid": 1068
-		},
-		"gurubashi berserker": {
-			"name": "gurubashi berserker",
-			"whid": 768
-		},
-		"hammer of wrath": {
-			"name": "hammer of wrath",
-			"whid": 250
-		},
-		"hand of protection": {
-			"name": "hand of protection",
-			"whid": 727
-		},
-		"harrison jones": {
-			"name": "harrison jones",
-			"whid": 912
-		},
-		"harvest golem": {
-			"name": "harvest golem",
-			"whid": 778
-		},
-		"haunted creeper": {
-			"name": "haunted creeper",
-			"whid": 1781
-		},
-		"headcrack": {
-			"name": "headcrack",
-			"whid": 708
-		},
-		"healing totem": {
-			"name": "healing totem",
-			"whid": 764
-		},
-		"healing touch": {
-			"name": "healing touch",
-			"whid": 773
-		},
-		"healing wave": {
-			"name": "healing wave",
-			"whid": 2612
-		},
-		"heavy axe": {
-			"name": "heavy axe",
-			"whid": 1661
-		},
-		"hellfire": {
-			"name": "hellfire",
-			"whid": 950
-		},
-		"hemet nesingwary": {
-			"name": "hemet nesingwary",
-			"whid": 2088
-		},
-		"heroic strike": {
-			"name": "heroic strike",
-			"whid": 1007
-		},
-		"hex": {
-			"name": "hex",
-			"whid": 766
-		},
-		"hobgoblin": {
-			"name": "hobgoblin",
-			"whid": 2072
-		},
-		"hogger": {
-			"name": "hogger",
-			"whid": 640
-		},
-		"holy champion": {
-			"name": "holy champion",
-			"whid": 2555
-		},
-		"holy fire": {
-			"name": "holy fire",
-			"whid": 1365
-		},
-		"holy light": {
-			"name": "holy light",
-			"whid": 291
-		},
-		"holy nova": {
-			"name": "holy nova",
-			"whid": 841
-		},
-		"holy smite": {
-			"name": "holy smite",
-			"whid": 279
-		},
-		"holy wrath": {
-			"name": "holy wrath",
-			"whid": 435
-		},
-		"homing chicken": {
-			"name": "homing chicken",
-			"whid": 227
-		},
-		"houndmaster": {
-			"name": "houndmaster",
-			"whid": 1003
-		},
-		"huffer": {
-			"name": "huffer",
-			"whid": 100
-		},
-		"huge toad": {
-			"name": "huge toad",
-			"whid": 2918
-		},
-		"humility": {
-			"name": "humility",
-			"whid": 854
-		},
-		"hungry crab": {
-			"name": "hungry crab",
-			"whid": 443
-		},
-		"hungry dragon": {
-			"name": "hungry dragon",
-			"whid": 2283
-		},
-		"hunter's mark": {
-			"name": "hunter's mark",
-			"whid": 141
-		},
-		"i am murloc": {
-			"name": "i am murloc",
-			"whid": 1843
-		},
-		"inferno": {
-			"name": "inferno",
-			"whid": 1178
-		},
-		"ice barrier": {
-			"name": "ice barrier",
-			"whid": 621
-		},
-		"ice block": {
-			"name": "ice block",
-			"whid": 192
-		},
-		"ice lance": {
-			"name": "ice lance",
-			"whid": 172
-		},
-		"ice rager": {
-			"name": "ice rager",
-			"whid": 2594
-		},
-		"icehowl": {
-			"name": "icehowl",
-			"whid": 2725
-		},
-		"illidan stormrage": {
-			"name": "illidan stormrage",
-			"whid": 556
-		},
-		"illuminator": {
-			"name": "illuminator",
-			"whid": 2057
-		},
-		"imp": {
-			"name": "imp",
-			"whid": 76
-		},
-		"imp gang boss": {
-			"name": "imp gang boss",
-			"whid": 2288
-		},
-		"imp master": {
-			"name": "imp master",
-			"whid": 926
-		},
-		"imp-losion": {
-			"name": "imp-losion",
-			"whid": 2013
-		},
-		"infernal": {
-			"name": "infernal",
-			"whid": 1143
-		},
-		"injured blademaster": {
-			"name": "injured blademaster",
-			"whid": 1109
-		},
-		"injured kvaldir": {
-			"name": "injured kvaldir",
-			"whid": 2502
-		},
-		"inner fire": {
-			"name": "inner fire",
-			"whid": 376
-		},
-		"inner rage": {
-			"name": "inner rage",
-			"whid": 22
-		},
-		"innervate": {
-			"name": "innervate",
-			"whid": 254
-		},
-		"iron juggernaut": {
-			"name": "iron juggernaut",
-			"whid": 2024
-		},
-		"iron sensei": {
-			"name": "iron sensei",
-			"whid": 1992
-		},
-		"ironbark protector": {
-			"name": "ironbark protector",
-			"whid": 205
-		},
-		"ironbeak owl": {
-			"name": "ironbeak owl",
-			"whid": 290
-		},
-		"ironforge rifleman": {
-			"name": "ironforge rifleman",
-			"whid": 339
-		},
-		"ironfur grizzly": {
-			"name": "ironfur grizzly",
-			"whid": 1182
-		},
-		"jeeves": {
-			"name": "jeeves",
-			"whid": 2062
-		},
-		"jeweled scarab": {
-			"name": "jeweled scarab",
-			"whid": 2901
-		},
-		"jungle moonkin": {
-			"name": "jungle moonkin",
-			"whid": 2923
-		},
-		"jungle panther": {
-			"name": "jungle panther",
-			"whid": 921
-		},
-		"junkbot": {
-			"name": "junkbot",
-			"whid": 2074
-		},
-		"justicar trueheart": {
-			"name": "justicar trueheart",
-			"whid": 2736
-		},
-		"keeper of uldaman": {
-			"name": "keeper of uldaman",
-			"whid": 2889
-		},
-		"keeper of the grove": {
-			"name": "keeper of the grove",
-			"whid": 601
-		},
-		"kel'thuzad": {
-			"name": "kel'thuzad",
-			"whid": 1794
-		},
-		"kezan mystic": {
-			"name": "kezan mystic",
-			"whid": 2042
-		},
-		"kidnapper": {
-			"name": "kidnapper",
-			"whid": 287
-		},
-		"kill command": {
-			"name": "kill command",
-			"whid": 296
-		},
-		"king krush": {
-			"name": "king krush",
-			"whid": 1144
-		},
-		"king mukla": {
-			"name": "king mukla",
-			"whid": 1693
-		},
-		"king of beasts": {
-			"name": "king of beasts",
-			"whid": 2014
-		},
-		"king's defender": {
-			"name": "king's defender",
-			"whid": 2756
-		},
-		"king's elekk": {
-			"name": "king's elekk",
-			"whid": 2635
-		},
-		"kirin tor mage": {
-			"name": "kirin tor mage",
-			"whid": 748
-		},
-		"knife juggler": {
-			"name": "knife juggler",
-			"whid": 1073
-		},
-		"knight of the wild": {
-			"name": "knight of the wild",
-			"whid": 2788
-		},
-		"kobold geomancer": {
-			"name": "kobold geomancer",
-			"whid": 672
-		},
-		"kodorider": {
-			"name": "kodorider",
-			"whid": 2598
-		},
-		"kor'kron elite": {
-			"name": "kor'kron elite",
-			"whid": 28
-		},
-		"kvaldir raider": {
-			"name": "kvaldir raider",
-			"whid": 2511
-		},
-		"lance carrier": {
-			"name": "lance carrier",
-			"whid": 2577
-		},
-		"laughing sister": {
-			"name": "laughing sister",
-			"whid": 340
-		},
-		"lava burst": {
-			"name": "lava burst",
-			"whid": 864
-		},
-		"lava shock": {
-			"name": "lava shock",
-			"whid": 2289
-		},
-		"lay on hands": {
-			"name": "lay on hands",
-			"whid": 594
-		},
-		"leader of the pack": {
-			"name": "leader of the pack",
-			"whid": 835
-		},
-		"leeroy jenkins": {
-			"name": "leeroy jenkins",
-			"whid": 559
-		},
-		"leokk": {
-			"name": "leokk",
-			"whid": 226
-		},
-		"leper gnome": {
-			"name": "leper gnome",
-			"whid": 658
-		},
-		"lesser heal": {
-			"name": "lesser heal",
-			"whid": 479
-		},
-		"life tap": {
-			"name": "life tap",
-			"whid": 300
-		},
-		"light of the naaru": {
-			"name": "light of the naaru",
-			"whid": 1933
-		},
-		"light's champion": {
-			"name": "light's champion",
-			"whid": 2259
-		},
-		"light's justice": {
-			"name": "light's justice",
-			"whid": 383
-		},
-		"lightbomb": {
-			"name": "lightbomb",
-			"whid": 1938
-		},
-		"lightning bolt": {
-			"name": "lightning bolt",
-			"whid": 505
-		},
-		"lightning storm": {
-			"name": "lightning storm",
-			"whid": 629
-		},
-		"lightspawn": {
-			"name": "lightspawn",
-			"whid": 886
-		},
-		"lightwarden": {
-			"name": "lightwarden",
-			"whid": 1655
-		},
-		"lightwell": {
-			"name": "lightwell",
-			"whid": 797
-		},
-		"lil' exorcist": {
-			"name": "lil' exorcist",
-			"whid": 2065
-		},
-		"living roots": {
-			"name": "living roots",
-			"whid": 2792
-		},
-		"loatheb": {
-			"name": "loatheb",
-			"whid": 1914
-		},
-		"lock and load": {
-			"name": "lock and load",
-			"whid": 2484
-		},
-		"loot hoarder": {
-			"name": "loot hoarder",
-			"whid": 251
-		},
-		"lord jaraxxus": {
-			"name": "lord jaraxxus",
-			"whid": 777
-		},
-		"lord of the arena": {
-			"name": "lord of the arena",
-			"whid": 157
-		},
-		"lorewalker cho": {
-			"name": "lorewalker cho",
-			"whid": 1135
-		},
-		"lost tallstrider": {
-			"name": "lost tallstrider",
-			"whid": 2039
-		},
-		"lowly squire": {
-			"name": "lowly squire",
-			"whid": 2486
-		},
-		"mad bomber": {
-			"name": "mad bomber",
-			"whid": 762
-		},
-		"mad scientist": {
-			"name": "mad scientist",
-			"whid": 1783
-		},
-		"madder bomber": {
-			"name": "madder bomber",
-			"whid": 2058
-		},
-		"maexxna": {
-			"name": "maexxna",
-			"whid": 1791
-		},
-		"magma rager": {
-			"name": "magma rager",
-			"whid": 1653
-		},
-		"magnataur alpha": {
-			"name": "magnataur alpha",
-			"whid": 2753
-		},
-		"maiden of the lake": {
-			"name": "maiden of the lake",
-			"whid": 2488
-		},
-		"majordomo executus": {
-			"name": "majordomo executus",
-			"whid": 2281
-		},
-		"mal'ganis": {
-			"name": "mal'ganis",
-			"whid": 1986
-		},
-		"malorne": {
-			"name": "malorne",
-			"whid": 2003
-		},
-		"malygos": {
-			"name": "malygos",
-			"whid": 436
-		},
-		"mana addict": {
-			"name": "mana addict",
-			"whid": 12
-		},
-		"mana tide totem": {
-			"name": "mana tide totem",
-			"whid": 513
-		},
-		"mana wraith": {
-			"name": "mana wraith",
-			"whid": 715
-		},
-		"mana wyrm": {
-			"name": "mana wyrm",
-			"whid": 405
-		},
-		"mark of nature": {
-			"name": "mark of nature",
-			"whid": 151
-		},
-		"mark of the wild": {
-			"name": "mark of the wild",
-			"whid": 213
-		},
-		"mass dispel": {
-			"name": "mass dispel",
-			"whid": 1366
-		},
-		"master jouster": {
-			"name": "master jouster",
-			"whid": 2507
-		},
-		"master swordsmith": {
-			"name": "master swordsmith",
-			"whid": 351
-		},
-		"master of ceremonies": {
-			"name": "master of ceremonies",
-			"whid": 2493
-		},
-		"master of disguise": {
-			"name": "master of disguise",
-			"whid": 887
-		},
-		"mech-bear-cat": {
-			"name": "mech-bear-cat",
-			"whid": 2002
-		},
-		"mechanical dragonling": {
-			"name": "mechanical dragonling",
-			"whid": 59
-		},
-		"mechanical yeti": {
-			"name": "mechanical yeti",
-			"whid": 2046
-		},
-		"mechwarper": {
-			"name": "mechwarper",
-			"whid": 1940
-		},
-		"mekgineer thermaplugg": {
-			"name": "mekgineer thermaplugg",
-			"whid": 2084
-		},
-		"metaltooth leaper": {
-			"name": "metaltooth leaper",
-			"whid": 2016
-		},
-		"micro machine": {
-			"name": "micro machine",
-			"whid": 2071
-		},
-		"millhouse manastorm": {
-			"name": "millhouse manastorm",
-			"whid": 855
-		},
-		"mimiron's head": {
-			"name": "mimiron's head",
-			"whid": 2079
-		},
-		"mind blast": {
-			"name": "mind blast",
-			"whid": 545
-		},
-		"mind control": {
-			"name": "mind control",
-			"whid": 8
-		},
-		"mind control tech": {
-			"name": "mind control tech",
-			"whid": 734
-		},
-		"mind shatter": {
-			"name": "mind shatter",
-			"whid": 1623
-		},
-		"mind spike": {
-			"name": "mind spike",
-			"whid": 1622
-		},
-		"mind vision": {
-			"name": "mind vision",
-			"whid": 1099
-		},
-		"mindgames": {
-			"name": "mindgames",
-			"whid": 145
-		},
-		"mini-mage": {
-			"name": "mini-mage",
-			"whid": 2077
-		},
-		"mirror entity": {
-			"name": "mirror entity",
-			"whid": 195
-		},
-		"mirror image": {
-			"name": "mirror image",
-			"whid": 968
-		},
-		"misdirection": {
-			"name": "misdirection",
-			"whid": 1091
-		},
-		"misha": {
-			"name": "misha",
-			"whid": 959
-		},
-		"mistress of pain": {
-			"name": "mistress of pain",
-			"whid": 2172
-		},
-		"mogor the ogre": {
-			"name": "mogor the ogre",
-			"whid": 2080
-		},
-		"mogor's champion": {
-			"name": "mogor's champion",
-			"whid": 2491
-		},
-		"mogu'shan warden": {
-			"name": "mogu'shan warden",
-			"whid": 700
-		},
-		"molten giant": {
-			"name": "molten giant",
-			"whid": 1372
-		},
-		"moonfire": {
-			"name": "moonfire",
-			"whid": 467
-		},
-		"mortal coil": {
-			"name": "mortal coil",
-			"whid": 1092
-		},
-		"mortal strike": {
-			"name": "mortal strike",
-			"whid": 804
-		},
-		"mountain giant": {
-			"name": "mountain giant",
-			"whid": 993
-		},
-		"mounted raptor": {
-			"name": "mounted raptor",
-			"whid": 2922
-		},
-		"mukla's champion": {
-			"name": "mukla's champion",
-			"whid": 2497
-		},
-		"mulch": {
-			"name": "mulch",
-			"whid": 2793
-		},
-		"multi-shot": {
-			"name": "multi-shot",
-			"whid": 292
-		},
-		"murloc knight": {
-			"name": "murloc knight",
-			"whid": 2655
-		},
-		"murloc raider": {
-			"name": "murloc raider",
-			"whid": 191
-		},
-		"murloc scout": {
-			"name": "murloc scout",
-			"whid": 1078
-		},
-		"murloc tidecaller": {
-			"name": "murloc tidecaller",
-			"whid": 475
-		},
-		"murloc tidehunter": {
-			"name": "murloc tidehunter",
-			"whid": 976
-		},
-		"murloc tinyfin": {
-			"name": "murloc tinyfin",
-			"whid": 13879
-		},
-		"murloc warleader": {
-			"name": "murloc warleader",
-			"whid": 1063
-		},
-		"museum curator": {
-			"name": "museum curator",
-			"whid": 2878
-		},
-		"muster for battle": {
-			"name": "muster for battle",
-			"whid": 2029
-		},
-		"mysterious challenger": {
-			"name": "mysterious challenger",
-			"whid": 2726
-		},
-		"naga sea witch": {
-			"name": "naga sea witch",
-			"whid": 2910
-		},
-		"nat pagle": {
-			"name": "nat pagle",
-			"whid": 1147
-		},
-		"naturalize": {
-			"name": "naturalize",
-			"whid": 233
-		},
-		"nefarian": {
-			"name": "nefarian",
-			"whid": 2261
-		},
-		"neptulon": {
-			"name": "neptulon",
-			"whid": 2010
-		},
-		"nerub'ar weblord": {
-			"name": "nerub'ar weblord",
-			"whid": 1800
-		},
-		"nerubian egg": {
-			"name": "nerubian egg",
-			"whid": 1786
-		},
-		"nexus-champion saraad": {
-			"name": "nexus-champion saraad",
-			"whid": 2683
-		},
-		"nexus champion saraad": {
-			"name": "nexus-champion saraad",
-			"whid": 2683
-		},
-		"nightblade": {
-			"name": "nightblade",
-			"whid": 670
-		},
-		"nightmare": {
-			"name": "nightmare",
-			"whid": 217
-		},
-		"noble sacrifice": {
-			"name": "noble sacrifice",
-			"whid": 584
-		},
-		"north sea kraken": {
-			"name": "north sea kraken",
-			"whid": 2520
-		},
-		"northshire cleric": {
-			"name": "northshire cleric",
-			"whid": 1650
-		},
-		"nourish": {
-			"name": "nourish",
-			"whid": 95
-		},
-		"novice engineer": {
-			"name": "novice engineer",
-			"whid": 284
-		},
-		"nozdormu": {
-			"name": "nozdormu",
-			"whid": 411
-		},
-		"oasis snapjaw": {
-			"name": "oasis snapjaw",
-			"whid": 1370
-		},
-		"obsidian destroyer": {
-			"name": "obsidian destroyer",
-			"whid": 2881
-		},
-		"ogre brute": {
-			"name": "ogre brute",
-			"whid": 2033
-		},
-		"ogre magi": {
-			"name": "ogre magi",
-			"whid": 995
-		},
-		"ogre ninja": {
-			"name": "ogre ninja",
-			"whid": 2056
-		},
-		"ogre warmaul": {
-			"name": "ogre warmaul",
-			"whid": 2022
-		},
-		"old murk-eye": {
-			"name": "old murk-eye",
-			"whid": 736
-		},
-		"one-eyed cheat": {
-			"name": "one-eyed cheat",
-			"whid": 1990
-		},
-		"onyxia": {
-			"name": "onyxia",
-			"whid": 363
-		},
-		"orgrimmar aspirant": {
-			"name": "orgrimmar aspirant",
-			"whid": 2711
-		},
-		"panther": {
-			"name": "panther",
-			"whid": 812
-		},
-		"patient assassin": {
-			"name": "patient assassin",
-			"whid": 1133
-		},
-		"perdition's blade": {
-			"name": "perdition's blade",
-			"whid": 391
-		},
-		"piloted shredder": {
-			"name": "piloted shredder",
-			"whid": 2064
-		},
-		"piloted sky golem": {
-			"name": "piloted sky golem",
-			"whid": 2073
-		},
-		"pint-sized summoner": {
-			"name": "pint-sized summoner",
-			"whid": 37
-		},
-		"pit fighter": {
-			"name": "pit fighter",
-			"whid": 2521
-		},
-		"pit lord": {
-			"name": "pit lord",
-			"whid": 783
-		},
-		"pit snake": {
-			"name": "pit snake",
-			"whid": 2882
-		},
-		"poison seeds": {
-			"name": "poison seeds",
-			"whid": 1802
-		},
-		"poisoned blade": {
-			"name": "poisoned blade",
-			"whid": 2763
-		},
-		"polymorph": {
-			"name": "polymorph",
-			"whid": 77
-		},
-		"polymorph: boar": {
-			"name": "polymorph: boar",
-			"whid": 2542
-		},
-		"poultryizer": {
-			"name": "poultryizer",
-			"whid": 146
-		},
-		"power overwhelming": {
-			"name": "power overwhelming",
-			"whid": 846
-		},
-		"power word: glory": {
-			"name": "power word: glory",
-			"whid": 2568
-		},
-		"power word: shield": {
-			"name": "power word: shield",
-			"whid": 613
-		},
-		"power of the horde": {
-			"name": "power of the horde",
-			"whid": 1846
-		},
-		"power of the wild": {
-			"name": "power of the wild",
-			"whid": 503
-		},
-		"powermace": {
-			"name": "powermace",
-			"whid": 2004
-		},
-		"powershot": {
-			"name": "powershot",
-			"whid": 2638
-		},
-		"preparation": {
-			"name": "preparation",
-			"whid": 1158
-		},
-		"priestess of elune": {
-			"name": "priestess of elune",
-			"whid": 424
-		},
-		"prophet velen": {
-			"name": "prophet velen",
-			"whid": 9
-		},
-		"puddlestomper": {
-			"name": "puddlestomper",
-			"whid": 2032
-		},
-		"pyroblast": {
-			"name": "pyroblast",
-			"whid": 1087
-		},
-		"quartermaster": {
-			"name": "quartermaster",
-			"whid": 2028
-		},
-		"questing adventurer": {
-			"name": "questing adventurer",
-			"whid": 791
-		},
-		"quick shot": {
-			"name": "quick shot",
-			"whid": 2260
-		},
-		"raging worgen": {
-			"name": "raging worgen",
-			"whid": 1155
-		},
-		"ragnaros the firelord": {
-			"name": "ragnaros the firelord",
-			"whid": 374
-		},
-		"raid leader": {
-			"name": "raid leader",
-			"whid": 1401
-		},
-		"ram wrangler": {
-			"name": "ram wrangler",
-			"whid": 2552
-		},
-		"rampage": {
-			"name": "rampage",
-			"whid": 1108
-		},
-		"raven idol": {
-			"name": "raven idol",
-			"whid": 13335
-		},
-		"ravenholdt assassin": {
-			"name": "ravenholdt assassin",
-			"whid": 134
-		},
-		"razorfen hunter": {
-			"name": "razorfen hunter",
-			"whid": 257
-		},
-		"reckless rocketeer": {
-			"name": "reckless rocketeer",
-			"whid": 445
-		},
-		"recombobulator": {
-			"name": "recombobulator",
-			"whid": 2076
-		},
-		"recruiter": {
-			"name": "recruiter",
-			"whid": 2509
-		},
-		"recycle": {
-			"name": "recycle",
-			"whid": 1995
-		},
-		"redemption": {
-			"name": "redemption",
-			"whid": 140
-		},
-		"refreshment vendor": {
-			"name": "refreshment vendor",
-			"whid": 2704
-		},
-		"reincarnate": {
-			"name": "reincarnate",
-			"whid": 1809
-		},
-		"reinforce": {
-			"name": "reinforce",
-			"whid": 472
-		},
-		"reliquary seeker": {
-			"name": "reliquary seeker",
-			"whid": 13334
-		},
-		"rend blackhand": {
-			"name": "rend blackhand",
-			"whid": 2308
-		},
-		"reno jackson": {
-			"name": "reno jackson",
-			"whid": 2883
-		},
-		"repair bot": {
-			"name": "repair bot",
-			"whid": 329
-		},
-		"repentance": {
-			"name": "repentance",
-			"whid": 232
-		},
-		"resurrect": {
-			"name": "resurrect",
-			"whid": 2298
-		},
-		"revenge": {
-			"name": "revenge",
-			"whid": 2296
-		},
-		"reversing switch": {
-			"name": "reversing switch",
-			"whid": 2156
-		},
-		"rhonin": {
-			"name": "rhonin",
-			"whid": 2546
-		},
-		"river crocolisk": {
-			"name": "river crocolisk",
-			"whid": 1369
-		},
-		"rockbiter weapon": {
-			"name": "rockbiter weapon",
-			"whid": 239
-		},
-		"rogues do it": {
-			"name": "rogues do it",
-			"whid": 1845
-		},
-		"rumbling elemental": {
-			"name": "rumbling elemental",
-			"whid": 2888
-		},
-		"rusty horn": {
-			"name": "rusty horn",
-			"whid": 2153
-		},
-		"si:7 agent": {
-			"name": "si:7 agent",
-			"whid": 1117
-		},
-		"sabotage": {
-			"name": "sabotage",
-			"whid": 2015
-		},
-		"saboteur": {
-			"name": "saboteur",
-			"whid": 2576
-		},
-		"sacred trial": {
-			"name": "sacred trial",
-			"whid": 2899
-		},
-		"sacrificial pact": {
-			"name": "sacrificial pact",
-			"whid": 163
-		},
-		"salty dog": {
-			"name": "salty dog",
-			"whid": 2038
-		},
-		"sap": {
-			"name": "sap",
-			"whid": 461
-		},
-		"savage combatant": {
-			"name": "savage combatant",
-			"whid": 2780
-		},
-		"savage roar": {
-			"name": "savage roar",
-			"whid": 742
-		},
-		"savagery": {
-			"name": "savagery",
-			"whid": 481
-		},
-		"savannah highmane": {
-			"name": "savannah highmane",
-			"whid": 1261
-		},
-		"scarlet crusader": {
-			"name": "scarlet crusader",
-			"whid": 642
-		},
-		"scarlet purifier": {
-			"name": "scarlet purifier",
-			"whid": 2069
-		},
-		"scavenging hyena": {
-			"name": "scavenging hyena",
-			"whid": 1281
-		},
-		"screwjank clunker": {
-			"name": "screwjank clunker",
-			"whid": 2023
-		},
-		"sea giant": {
-			"name": "sea giant",
-			"whid": 211
-		},
-		"sea reaver": {
-			"name": "sea reaver",
-			"whid": 2717
-		},
-		"seal of champions": {
-			"name": "seal of champions",
-			"whid": 2723
-		},
-		"seal of light": {
-			"name": "seal of light",
-			"whid": 2025
-		},
-		"searing totem": {
-			"name": "searing totem",
-			"whid": 537
-		},
-		"secretkeeper": {
-			"name": "secretkeeper",
-			"whid": 158
-		},
-		"sen'jin shieldmasta": {
-			"name": "sen'jin shieldmasta",
-			"whid": 635
-		},
-		"sense demons": {
-			"name": "sense demons",
-			"whid": 860
-		},
-		"shade of naxxramas": {
-			"name": "shade of naxxramas",
-			"whid": 1784
-		},
-		"shado-pan rider": {
-			"name": "shado-pan rider",
-			"whid": 2765
-		},
-		"shadow bolt": {
-			"name": "shadow bolt",
-			"whid": 914
-		},
-		"shadow madness": {
-			"name": "shadow madness",
-			"whid": 220
-		},
-		"shadow word: death": {
-			"name": "shadow word: death",
-			"whid": 1363
-		},
-		"shadow word: pain": {
-			"name": "shadow word: pain",
-			"whid": 1367
-		},
-		"shadow of nothing": {
-			"name": "shadow of nothing",
-			"whid": 1720
-		},
-		"shadowbomber": {
-			"name": "shadowbomber",
-			"whid": 1937
-		},
-		"shadowboxer": {
-			"name": "shadowboxer",
-			"whid": 2040
-		},
-		"shadowfiend": {
-			"name": "shadowfiend",
-			"whid": 2566
-		},
-		"shadowflame": {
-			"name": "shadowflame",
-			"whid": 147
-		},
-		"shadowform": {
-			"name": "shadowform",
-			"whid": 1368
-		},
-		"shadowstep": {
-			"name": "shadowstep",
-			"whid": 365
-		},
-		"shady dealer": {
-			"name": "shady dealer",
-			"whid": 2768
-		},
-		"shan'do's lesson": {
-			"name": "shan'do's lesson",
-			"whid": 364
-		},
-		"shapeshift": {
-			"name": "shapeshift",
-			"whid": 1123
-		},
-		"shattered sun cleric": {
-			"name": "shattered sun cleric",
-			"whid": 608
-		},
-		"sheep": {
-			"name": "sheep",
-			"whid": 796
-		},
-		"shield block": {
-			"name": "shield block",
-			"whid": 1023
-		},
-		"shield slam": {
-			"name": "shield slam",
-			"whid": 546
-		},
-		"shieldbearer": {
-			"name": "shieldbearer",
-			"whid": 866
-		},
-		"shielded minibot": {
-			"name": "shielded minibot",
-			"whid": 2026
-		},
-		"shieldmaiden": {
-			"name": "shieldmaiden",
-			"whid": 2021
-		},
-		"ship's cannon": {
-			"name": "ship's cannon",
-			"whid": 2043
-		},
-		"shiv": {
-			"name": "shiv",
-			"whid": 573
-		},
-		"shrinkmeister": {
-			"name": "shrinkmeister",
-			"whid": 1936
-		},
-		"sideshow spelleater": {
-			"name": "sideshow spelleater",
-			"whid": 2573
-		},
-		"siege engine": {
-			"name": "siege engine",
-			"whid": 2054
-		},
-		"silence": {
-			"name": "silence",
-			"whid": 1189
-		},
-		"silent knight": {
-			"name": "silent knight",
-			"whid": 2579
-		},
-		"siltfin spiritwalker": {
-			"name": "siltfin spiritwalker",
-			"whid": 2008
-		},
-		"silver hand knight": {
-			"name": "silver hand knight",
-			"whid": 69
-		},
-		"silver hand recruit": {
-			"name": "silver hand recruit",
-			"whid": 1652
-		},
-		"silver hand regent": {
-			"name": "silver hand regent",
-			"whid": 2503
-		},
-		"silverback patriarch": {
-			"name": "silverback patriarch",
-			"whid": 67
-		},
-		"silvermoon guardian": {
-			"name": "silvermoon guardian",
-			"whid": 34
-		},
-		"sinister strike": {
-			"name": "sinister strike",
-			"whid": 710
-		},
-		"siphon soul": {
-			"name": "siphon soul",
-			"whid": 1100
-		},
-		"sir finley mrrgglton": {
-			"name": "sir finley mrrgglton",
-			"whid": 2948
-		},
-		"skycap'n kragg": {
-			"name": "skycap'n kragg",
-			"whid": 2757
-		},
-		"slam": {
-			"name": "slam",
-			"whid": 1074
-		},
-		"sludge belcher": {
-			"name": "sludge belcher",
-			"whid": 1793
-		},
-		"snake": {
-			"name": "snake",
-			"whid": 204
-		},
-		"snake trap": {
-			"name": "snake trap",
-			"whid": 455
-		},
-		"sneed's old shredder": {
-			"name": "sneed's old shredder",
-			"whid": 2082
-		},
-		"snipe": {
-			"name": "snipe",
-			"whid": 814
-		},
-		"snowchugger": {
-			"name": "snowchugger",
-			"whid": 1928
-		},
-		"solemn vigil": {
-			"name": "solemn vigil",
-			"whid": 2274
-		},
-		"soot spewer": {
-			"name": "soot spewer",
-			"whid": 2249
-		},
-		"sorcerer's apprentice": {
-			"name": "sorcerer's apprentice",
-			"whid": 614
-		},
-		"soul of the forest": {
-			"name": "soul of the forest",
-			"whid": 381
-		},
-		"soulfire": {
-			"name": "soulfire",
-			"whid": 974
-		},
-		"southsea captain": {
-			"name": "southsea captain",
-			"whid": 680
-		},
-		"southsea deckhand": {
-			"name": "southsea deckhand",
-			"whid": 724
-		},
-		"sparring partner": {
-			"name": "sparring partner",
-			"whid": 2733
-		},
-		"spawn of shadows": {
-			"name": "spawn of shadows",
-			"whid": 2551
-		},
-		"spectral knight": {
-			"name": "spectral knight",
-			"whid": 1789
-		},
-		"spellbender": {
-			"name": "spellbender",
-			"whid": 366
-		},
-		"spellbreaker": {
-			"name": "spellbreaker",
-			"whid": 754
-		},
-		"spellslinger": {
-			"name": "spellslinger",
-			"whid": 2571
-		},
-		"spider tank": {
-			"name": "spider tank",
-			"whid": 2012
-		},
-		"spirit wolf": {
-			"name": "spirit wolf",
-			"whid": 533
-		},
-		"spiteful smith": {
-			"name": "spiteful smith",
-			"whid": 61
-		},
-		"sprint": {
-			"name": "sprint",
-			"whid": 630
-		},
-		"squire": {
-			"name": "squire",
-			"whid": 482
-		},
-		"squirrel": {
-			"name": "squirrel",
-			"whid": 1190
-		},
-		"stablemaster": {
-			"name": "stablemaster",
-			"whid": 2639
-		},
-		"stalagg": {
-			"name": "stalagg",
-			"whid": 1796
-		},
-		"stampeding kodo": {
-			"name": "stampeding kodo",
-			"whid": 1371
-		},
-		"starfall": {
-			"name": "starfall",
-			"whid": 86
-		},
-		"starfire": {
-			"name": "starfire",
-			"whid": 823
-		},
-		"starving buzzard": {
-			"name": "starving buzzard",
-			"whid": 1241
-		},
-		"steady shot": {
-			"name": "steady shot",
-			"whid": 229
-		},
-		"steamwheedle sniper": {
-			"name": "steamwheedle sniper",
-			"whid": 2055
-		},
-		"stoneclaw totem": {
-			"name": "stoneclaw totem",
-			"whid": 850
-		},
-		"stoneskin gargoyle": {
-			"name": "stoneskin gargoyle",
-			"whid": 1861
-		},
-		"stonesplinter trogg": {
-			"name": "stonesplinter trogg",
-			"whid": 2035
-		},
-		"stonetusk boar": {
-			"name": "stonetusk boar",
-			"whid": 648
-		},
-		"stormforged axe": {
-			"name": "stormforged axe",
-			"whid": 960
-		},
-		"stormpike commando": {
-			"name": "stormpike commando",
-			"whid": 413
-		},
-		"stormwind champion": {
-			"name": "stormwind champion",
-			"whid": 753
-		},
-		"stormwind knight": {
-			"name": "stormwind knight",
-			"whid": 622
-		},
-		"stranglethorn tiger": {
-			"name": "stranglethorn tiger",
-			"whid": 68
-		},
-		"succubus": {
-			"name": "succubus",
-			"whid": 592
-		},
-		"summon a panther": {
-			"name": "summon a panther",
-			"whid": 60
-		},
-		"summoning portal": {
-			"name": "summoning portal",
-			"whid": 969
-		},
-		"summoning stone": {
-			"name": "summoning stone",
-			"whid": 2958
-		},
-		"sunfury protector": {
-			"name": "sunfury protector",
-			"whid": 891
-		},
-		"sunwalker": {
-			"name": "sunwalker",
-			"whid": 759
-		},
-		"swipe": {
-			"name": "swipe",
-			"whid": 64
-		},
-		"sword of justice": {
-			"name": "sword of justice",
-			"whid": 643
-		},
-		"sylvanas windrunner": {
-			"name": "sylvanas windrunner",
-			"whid": 1721
-		},
-		"target dummy": {
-			"name": "target dummy",
-			"whid": 2061
-		},
-		"tauren warrior": {
-			"name": "tauren warrior",
-			"whid": 45
-		},
-		"temple enforcer": {
-			"name": "temple enforcer",
-			"whid": 1364
-		},
-		"thaddius": {
-			"name": "thaddius",
-			"whid": 1798
-		},
-		"the beast": {
-			"name": "the beast",
-			"whid": 962
-		},
-		"the coin": {
-			"name": "the coin",
-			"whid": 1746
-		},
-		"the mistcaller": {
-			"name": "the mistcaller",
-			"whid": 2618
-		},
-		"the skeleton knight": {
-			"name": "the skeleton knight",
-			"whid": 2681
-		},
-		"thoughtsteal": {
-			"name": "thoughtsteal",
-			"whid": 30
-		},
-		"thrallmar farseer": {
-			"name": "thrallmar farseer",
-			"whid": 765
-		},
-		"thunder bluff valiant": {
-			"name": "thunder bluff valiant",
-			"whid": 2615
-		},
-		"timber wolf": {
-			"name": "timber wolf",
-			"whid": 606
-		},
-		"time rewinder": {
-			"name": "time rewinder",
-			"whid": 2152
-		},
-		"tinker's sharpsword oil": {
-			"name": "tinker's sharpsword oil",
-			"whid": 2095
-		},
-		"tinkertown technician": {
-			"name": "tinkertown technician",
-			"whid": 2070
-		},
-		"tinkmaster overspark": {
-			"name": "tinkmaster overspark",
-			"whid": 570
-		},
-		"tiny knight of evil": {
-			"name": "tiny knight of evil",
-			"whid": 2777
-		},
-		"tirion fordring": {
-			"name": "tirion fordring",
-			"whid": 890
-		},
-		"tomb pillager": {
-			"name": "tomb pillager",
-			"whid": 2884
-		},
-		"tomb spider": {
-			"name": "tomb spider",
-			"whid": 2919
-		},
-		"toshley": {
-			"name": "toshley",
-			"whid": 2083
-		},
-		"totem golem": {
-			"name": "totem golem",
-			"whid": 2610
-		},
-		"totemic call": {
-			"name": "totemic call",
-			"whid": 687
-		},
-		"totemic might": {
-			"name": "totemic might",
-			"whid": 830
-		},
-		"tournament attendee": {
-			"name": "tournament attendee",
-			"whid": 2499
-		},
-		"tournament medic": {
-			"name": "tournament medic",
-			"whid": 2575
-		},
-		"tracking": {
-			"name": "tracking",
-			"whid": 1047
-		},
-		"trade prince gallywix": {
-			"name": "trade prince gallywix",
-			"whid": 1993
-		},
-		"treant": {
-			"name": "treant",
-			"whid": 600
-		},
-		"tree of life": {
-			"name": "tree of life",
-			"whid": 2001
-		},
-		"troggzor the earthinator": {
-			"name": "troggzor the earthinator",
-			"whid": 2086
-		},
-		"truesilver champion": {
-			"name": "truesilver champion",
-			"whid": 847
-		},
-		"tundra rhino": {
-			"name": "tundra rhino",
-			"whid": 699
-		},
-		"tunnel trogg": {
-			"name": "tunnel trogg",
-			"whid": 2890
-		},
-		"tuskarr jouster": {
-			"name": "tuskarr jouster",
-			"whid": 2504
-		},
-		"tuskarr totemic": {
-			"name": "tuskarr totemic",
-			"whid": 2513
-		},
-		"twilight drake": {
-			"name": "twilight drake",
-			"whid": 1037
-		},
-		"twilight guardian": {
-			"name": "twilight guardian",
-			"whid": 2569
-		},
-		"twilight whelp": {
-			"name": "twilight whelp",
-			"whid": 2286
-		},
-		"twisting nether": {
-			"name": "twisting nether",
-			"whid": 859
-		},
-		"unbound elemental": {
-			"name": "unbound elemental",
-			"whid": 774
-		},
-		"undercity valiant": {
-			"name": "undercity valiant",
-			"whid": 2767
-		},
-		"undertaker": {
-			"name": "undertaker",
-			"whid": 1910
-		},
-		"unearthed raptor": {
-			"name": "unearthed raptor",
-			"whid": 2891
-		},
-		"unleash the hounds": {
-			"name": "unleash the hounds",
-			"whid": 1243
-		},
-		"unstable ghoul": {
-			"name": "unstable ghoul",
-			"whid": 1808
-		},
-		"unstable portal": {
-			"name": "unstable portal",
-			"whid": 1929
-		},
-		"upgrade": {
-			"name": "upgrade",
-			"whid": 511
-		},
-		"upgraded repair bot": {
-			"name": "upgraded repair bot",
-			"whid": 2051
-		},
-		"v-07-tr-0n": {
-			"name": "v-07-tr-0n",
-			"whid": 2232
-		},
-		"vanish": {
-			"name": "vanish",
-			"whid": 196
-		},
-		"vaporize": {
-			"name": "vaporize",
-			"whid": 286
-		},
-		"varian wrynn": {
-			"name": "varian wrynn",
-			"whid": 2760
-		},
-		"velen's chosen": {
-			"name": "velen's chosen",
-			"whid": 1935
-		},
-		"venture co. mercenary": {
-			"name": "venture co. mercenary",
-			"whid": 1122
-		},
-		"violet apprentice": {
-			"name": "violet apprentice",
-			"whid": 378
-		},
-		"violet teacher": {
-			"name": "violet teacher",
-			"whid": 1029
-		},
-		"vitality totem": {
-			"name": "vitality totem",
-			"whid": 2007
-		},
-		"void crusher": {
-			"name": "void crusher",
-			"whid": 2537
-		},
-		"void terror": {
-			"name": "void terror",
-			"whid": 1221
-		},
-		"voidcaller": {
-			"name": "voidcaller",
-			"whid": 1806
-		},
-		"voidwalker": {
-			"name": "voidwalker",
-			"whid": 48
-		},
-		"vol'jin": {
-			"name": "vol'jin",
-			"whid": 1931
-		},
-		"volcanic drake": {
-			"name": "volcanic drake",
-			"whid": 2258
-		},
-		"volcanic lumberer": {
-			"name": "volcanic lumberer",
-			"whid": 2295
-		},
-		"voodoo doctor": {
-			"name": "voodoo doctor",
-			"whid": 132
-		},
-		"wailing soul": {
-			"name": "wailing soul",
-			"whid": 1799
-		},
-		"war golem": {
-			"name": "war golem",
-			"whid": 712
-		},
-		"warbot": {
-			"name": "warbot",
-			"whid": 2019
-		},
-		"warhorse trainer": {
-			"name": "warhorse trainer",
-			"whid": 2515
-		},
-		"warsong commander": {
-			"name": "warsong commander",
-			"whid": 1009
-		},
-		"water elemental": {
-			"name": "water elemental",
-			"whid": 395
-		},
-		"webspinner": {
-			"name": "webspinner",
-			"whid": 1860
-		},
-		"wee spellstopper": {
-			"name": "wee spellstopper",
-			"whid": 2234
-		},
-		"whelp": {
-			"name": "whelp",
-			"whid": 54
-		},
-		"whirling blades": {
-			"name": "whirling blades",
-			"whid": 2150
-		},
-		"whirling zap-o-matic": {
-			"name": "whirling zap-o-matic",
-			"whid": 2005
-		},
-		"whirlwind": {
-			"name": "whirlwind",
-			"whid": 636
-		},
-		"wicked knife": {
-			"name": "wicked knife",
-			"whid": 485
-		},
-		"wild growth": {
-			"name": "wild growth",
-			"whid": 1124
-		},
-		"wild pyromancer": {
-			"name": "wild pyromancer",
-			"whid": 1014
-		},
-		"wildwalker": {
-			"name": "wildwalker",
-			"whid": 2786
-		},
-		"wilfred fizzlebang": {
-			"name": "wilfred fizzlebang",
-			"whid": 2621
-		},
-		"windfury": {
-			"name": "windfury",
-			"whid": 51
-		},
-		"windfury harpy": {
-			"name": "windfury harpy",
-			"whid": 567
-		},
-		"windspeaker": {
-			"name": "windspeaker",
-			"whid": 178
-		},
-		"wisp": {
-			"name": "wisp",
-			"whid": 179
-		},
-		"wobbling runts": {
-			"name": "wobbling runts",
-			"whid": 2961
-		},
-		"wolfrider": {
-			"name": "wolfrider",
-			"whid": 289
-		},
-		"worgen infiltrator": {
-			"name": "worgen infiltrator",
-			"whid": 994
-		},
-		"worthless imp": {
-			"name": "worthless imp",
-			"whid": 1723
-		},
-		"wrath": {
-			"name": "wrath",
-			"whid": 836
-		},
-		"wrath of air totem": {
-			"name": "wrath of air totem",
-			"whid": 458
-		},
-		"wrathguard": {
-			"name": "wrathguard",
-			"whid": 2623
-		},
-		"wyrmrest agent": {
-			"name": "wyrmrest agent",
-			"whid": 2596
-		},
-		"young dragonhawk": {
-			"name": "young dragonhawk",
-			"whid": 641
-		},
-		"young priestess": {
-			"name": "young priestess",
-			"whid": 1634
-		},
-		"youthful brewmaster": {
-			"name": "youthful brewmaster",
-			"whid": 415
-		},
-		"ysera": {
-			"name": "ysera",
-			"whid": 1186
-		},
-		"ysera awakens": {
-			"name": "ysera awakens",
-			"whid": 301
-		},
-		"zombie chow": {
-			"name": "zombie chow",
-			"whid": 1753
+		"a light in the darkness":{
+			"name":"A Light in the Darkness",
+			"whid":38913
+		},
+		"aberrant berserker":{
+			"name":"Aberrant Berserker",
+			"whid":38531
+		},
+		"abomination":{
+			"name":"Abomination",
+			"whid":440
+		},
+		"abusive sergeant":{
+			"name":"Abusive Sergeant",
+			"whid":242
+		},
+		"acidic swamp ooze":{
+			"name":"Acidic Swamp Ooze",
+			"whid":906
+		},
+		"acidmaw":{
+			"name":"Acidmaw",
+			"whid":2633
+		},
+		"acolyte of pain":{
+			"name":"Acolyte of Pain",
+			"whid":1659
+		},
+		"addled grizzly":{
+			"name":"Addled Grizzly",
+			"whid":38916
+		},
+		"al'akir":{
+			"name":"Al'Akir",
+			"whid":32
+		},
+		"al'akir the windlord":{
+			"name":"Al'Akir the Windlord",
+			"whid":32
+		},
+		"alarm-o-bot":{
+			"name":"Alarm-o-Bot",
+			"whid":1658
+		},
+		"aldor peacekeeper":{
+			"name":"Aldor Peacekeeper",
+			"whid":1167
+		},
+		"alexstrasza":{
+			"name":"Alexstrasza",
+			"whid":581
+		},
+		"alexstrasza's champion":{
+			"name":"Alexstrasza's Champion",
+			"whid":2758
+		},
+		"am'gam rager":{
+			"name":"Am'gam Rager",
+			"whid":38782
+		},
+		"amani berserker":{
+			"name":"Amani Berserker",
+			"whid":790
+		},
+		"ancestor's call":{
+			"name":"Ancestor's Call",
+			"whid":1998
+		},
+		"ancestral healing":{
+			"name":"Ancestral Healing",
+			"whid":149
+		},
+		"ancestral knowledge":{
+			"name":"Ancestral Knowledge",
+			"whid":2514
+		},
+		"ancestral spirit":{
+			"name":"Ancestral Spirit",
+			"whid":404
+		},
+		"ancient brewmaster":{
+			"name":"Ancient Brewmaster",
+			"whid":186
+		},
+		"ancient harbinger":{
+			"name":"Ancient Harbinger",
+			"whid":38873
+		},
+		"ancient mage":{
+			"name":"Ancient Mage",
+			"whid":915
+		},
+		"ancient of lore":{
+			"name":"Ancient of Lore",
+			"whid":920
+		},
+		"ancient of war":{
+			"name":"Ancient of War",
+			"whid":1035
+		},
+		"ancient shade":{
+			"name":"Ancient Shade",
+			"whid":9081
+		},
+		"ancient shieldbearer":{
+			"name":"Ancient Shieldbearer",
+			"whid":38897
+		},
+		"ancient watcher":{
+			"name":"Ancient Watcher",
+			"whid":605
+		},
+		"angry chicken":{
+			"name":"Angry Chicken",
+			"whid":1688
+		},
+		"anima golem":{
+			"name":"Anima Golem",
+			"whid":2045
+		},
+		"animal companion":{
+			"name":"Animal Companion",
+			"whid":437
+		},
+		"animated armor":{
+			"name":"Animated Armor",
+			"whid":36111
+		},
+		"annoy-o-tron":{
+			"name":"Annoy-o-Tron",
+			"whid":2053
+		},
+		"anodized robo cub":{
+			"name":"Anodized Robo Cub",
+			"whid":2096
+		},
+		"anomalus":{
+			"name":"Anomalus",
+			"whid":38463
+		},
+		"antique healbot":{
+			"name":"Antique Healbot",
+			"whid":2037
+		},
+		"anub'ar ambusher":{
+			"name":"Anub'ar Ambusher",
+			"whid":1810
+		},
+		"anub'arak":{
+			"name":"Anub'arak",
+			"whid":2586
+		},
+		"anubisath sentinel":{
+			"name":"Anubisath Sentinel",
+			"whid":2933
+		},
+		"anyfin can happen":{
+			"name":"Anyfin Can Happen",
+			"whid":2898
+		},
+		"arathi weaponsmith":{
+			"name":"Arathi Weaponsmith",
+			"whid":538
+		},
+		"arcane anomaly":{
+			"name":"Arcane Anomaly",
+			"whid":39215
+		},
+		"arcane blast":{
+			"name":"Arcane Blast",
+			"whid":2572
+		},
+		"arcane explosion":{
+			"name":"Arcane Explosion",
+			"whid":447
+		},
+		"arcane giant":{
+			"name":"Arcane Giant",
+			"whid":39426
+		},
+		"arcane golem":{
+			"name":"Arcane Golem",
+			"whid":466
+		},
+		"arcane intellect":{
+			"name":"Arcane Intellect",
+			"whid":555
+		},
+		"arcane missiles":{
+			"name":"Arcane Missiles",
+			"whid":564
+		},
+		"arcane nullifier":{
+			"name":"Arcane Nullifier",
+			"whid":2059
+		},
+		"arcane nullifier x-21":{
+			"name":"Arcane Nullifier X-21",
+			"whid":2059
+		},
+		"arcane shot":{
+			"name":"Arcane Shot",
+			"whid":877
+		},
+		"arcanite reaper":{
+			"name":"Arcanite Reaper",
+			"whid":304
+		},
+		"arcanosmith":{
+			"name":"Arcanosmith",
+			"whid":39491
+		},
+		"arch-thief rafaam":{
+			"name":"Arch-Thief Rafaam",
+			"whid":2964
+		},
+		"archmage":{
+			"name":"Archmage",
+			"whid":525
+		},
+		"archmage antonidas":{
+			"name":"Archmage Antonidas",
+			"whid":1080
+		},
+		"argent commander":{
+			"name":"Argent Commander",
+			"whid":281
+		},
+		"argent horserider":{
+			"name":"Argent Horserider",
+			"whid":2490
+		},
+		"argent lance":{
+			"name":"Argent Lance",
+			"whid":2720
+		},
+		"argent protector":{
+			"name":"Argent Protector",
+			"whid":1022
+		},
+		"argent squire":{
+			"name":"Argent Squire",
+			"whid":757
+		},
+		"argent watchman":{
+			"name":"Argent Watchman",
+			"whid":2505
+		},
+		"armored warhorse":{
+			"name":"Armored Warhorse",
+			"whid":2627
+		},
+		"armorsmith":{
+			"name":"Armorsmith",
+			"whid":596
+		},
+		"ashbringer":{
+			"name":"Ashbringer",
+			"whid":1730
+		},
+		"assassin's blade":{
+			"name":"Assassin's Blade",
+			"whid":421
+		},
+		"assassinate":{
+			"name":"Assassinate",
+			"whid":345
+		},
+		"astral communion":{
+			"name":"Astral Communion",
+			"whid":2785
+		},
+		"auchenai soulpriest":{
+			"name":"Auchenai Soulpriest",
+			"whid":237
+		},
+		"auctioneer":{
+			"name":"Auctioneer",
+			"whid":932
+		},
+		"avenge":{
+			"name":"Avenge",
+			"whid":1804
+		},
+		"avenging wrath":{
+			"name":"Avenging Wrath",
+			"whid":1174
+		},
+		"avian watcher":{
+			"name":"Avian Watcher",
+			"whid":39489
+		},
+		"aviana":{
+			"name":"Aviana",
+			"whid":2796
+		},
+		"axe flinger":{
+			"name":"Axe Flinger",
+			"whid":2297
+		},
+		"azure drake":{
+			"name":"Azure Drake",
+			"whid":825
+		},
+		"babbling book":{
+			"name":"Babbling Book",
+			"whid":39169
+		},
+		"backstab":{
+			"name":"Backstab",
+			"whid":180
+		},
+		"ball of spiders":{
+			"name":"Ball of Spiders",
+			"whid":2483
+		},
+		"bane of doom":{
+			"name":"Bane of Doom",
+			"whid":23
+		},
+		"barnes":{
+			"name":"Barnes",
+			"whid":39941
+		},
+		"baron geddon":{
+			"name":"Baron Geddon",
+			"whid":336
+		},
+		"baron rivendare":{
+			"name":"Baron Rivendare",
+			"whid":1915
+		},
+		"bash":{
+			"name":"Bash",
+			"whid":2729
+		},
+		"battle rage":{
+			"name":"Battle Rage",
+			"whid":400
+		},
+		"bear trap":{
+			"name":"Bear Trap",
+			"whid":2641
+		},
+		"beckoner of evil":{
+			"name":"Beckoner of Evil",
+			"whid":38859
+		},
+		"belcher":{
+			"name":"Belcher",
+			"whid":1793
+		},
+		"beneath the grounds":{
+			"name":"Beneath the Grounds",
+			"whid":2587
+		},
+		"bestial wrath":{
+			"name":"Bestial Wrath",
+			"whid":903
+		},
+		"betrayal":{
+			"name":"Betrayal",
+			"whid":282
+		},
+		"bgh":{
+			"name":"BGH",
+			"whid":1657
+		},
+		"big game hunter":{
+			"name":"Big Game Hunter",
+			"whid":1657
+		},
+		"bilefin tidehunter":{
+			"name":"Bilefin Tidehunter",
+			"whid":38538
+		},
+		"bite":{
+			"name":"Bite",
+			"whid":577
+		},
+		"black knight":{
+			"name":"Black Knight",
+			"whid":1656
+		},
+		"blackwater pirate":{
+			"name":"Blackwater Pirate",
+			"whid":38960
+		},
+		"blackwing corruptor":{
+			"name":"Blackwing Corruptor",
+			"whid":2409
+		},
+		"blackwing technician":{
+			"name":"Blackwing Technician",
+			"whid":2408
+		},
+		"blade flurry":{
+			"name":"Blade Flurry",
+			"whid":1064
+		},
+		"blade of c'thun":{
+			"name":"Blade of C'Thun",
+			"whid":38861
+		},
+		"bladed cultist":{
+			"name":"Bladed Cultist",
+			"whid":38391
+		},
+		"blessed champion":{
+			"name":"Blessed Champion",
+			"whid":1522
+		},
+		"blessing of kings":{
+			"name":"Blessing of Kings",
+			"whid":943
+		},
+		"blessing of might":{
+			"name":"Blessing of Might",
+			"whid":70
+		},
+		"blessing of wisdom":{
+			"name":"Blessing of Wisdom",
+			"whid":1373
+		},
+		"blingtron 3000":{
+			"name":"Blingtron 3000",
+			"whid":2087
+		},
+		"blizzard":{
+			"name":"Blizzard",
+			"whid":457
+		},
+		"blood imp":{
+			"name":"Blood Imp",
+			"whid":469
+		},
+		"blood knight":{
+			"name":"Blood Knight",
+			"whid":755
+		},
+		"blood of the ancient one":{
+			"name":"Blood of The Ancient One",
+			"whid":38567
+		},
+		"blood to ichor":{
+			"name":"Blood To Ichor",
+			"whid":38918
+		},
+		"blood warriors":{
+			"name":"Blood Warriors",
+			"whid":38848
+		},
+		"bloodfen raptor":{
+			"name":"Bloodfen Raptor",
+			"whid":216
+		},
+		"bloodhoof brave":{
+			"name":"Bloodhoof Brave",
+			"whid":38738
+		},
+		"bloodlust":{
+			"name":"Bloodlust",
+			"whid":1171
+		},
+		"bloodmage thalnos":{
+			"name":"Bloodmage Thalnos",
+			"whid":749
+		},
+		"bloodsail corsair":{
+			"name":"Bloodsail Corsair",
+			"whid":997
+		},
+		"bloodsail cultist":{
+			"name":"Bloodsail Cultist",
+			"whid":38920
+		},
+		"bloodsail raider":{
+			"name":"Bloodsail Raider",
+			"whid":999
+		},
+		"bluegill warrior":{
+			"name":"Bluegill Warrior",
+			"whid":739
+		},
+		"bog creeper":{
+			"name":"Bog Creeper",
+			"whid":38534
+		},
+		"bolf ramshield":{
+			"name":"Bolf Ramshield",
+			"whid":2595
+		},
+		"bolster":{
+			"name":"Bolster",
+			"whid":2754
+		},
+		"bolvar":{
+			"name":"Bolvar",
+			"whid":2031
+		},
+		"bolvar fordragon":{
+			"name":"Bolvar Fordragon",
+			"whid":2031
+		},
+		"bomb lobber":{
+			"name":"Bomb Lobber",
+			"whid":2067
+		},
+		"boneguard lieutenant":{
+			"name":"Boneguard Lieutenant",
+			"whid":2495
+		},
+		"book wyrm":{
+			"name":"Book Wyrm",
+			"whid":39210
+		},
+		"boom bot":{
+			"name":"Boom Bot",
+			"whid":2235
+		},
+		"booty bay bodyguard":{
+			"name":"Booty Bay Bodyguard",
+			"whid":1140
+		},
+		"boulderfist ogre":{
+			"name":"Boulderfist Ogre",
+			"whid":1686
+		},
+		"bouncing blade":{
+			"name":"Bouncing Blade",
+			"whid":2018
+		},
+		"brann":{
+			"name":"Brann",
+			"whid":2949
+		},
+		"brann bronzebeard":{
+			"name":"Brann Bronzebeard",
+			"whid":2949
+		},
+		"brave archer":{
+			"name":"Brave Archer",
+			"whid":2642
+		},
+		"brawl":{
+			"name":"Brawl",
+			"whid":75
+		},
+		"buccaneer":{
+			"name":"Buccaneer",
+			"whid":2715
+		},
+		"burgle":{
+			"name":"Burgle",
+			"whid":2770
+		},
+		"burly rockjaw trogg":{
+			"name":"Burly Rockjaw Trogg",
+			"whid":2036
+		},
+		"burrowing mine":{
+			"name":"Burrowing Mine",
+			"whid":2221
+		},
+		"buzzard":{
+			"name":"Buzzard",
+			"whid":1241
+		},
+		"c'thun":{
+			"name":"C'Thun",
+			"whid":38857
+		},
+		"c'thun's chosen":{
+			"name":"C'Thun's Chosen",
+			"whid":38863
+		},
+		"cabal shadow priest":{
+			"name":"Cabal Shadow Priest",
+			"whid":272
+		},
+		"cabalist's tome":{
+			"name":"Cabalist's Tome",
+			"whid":38418
+		},
+		"cairne":{
+			"name":"Cairne",
+			"whid":420
+		},
+		"cairne bloodhoof":{
+			"name":"Cairne Bloodhoof",
+			"whid":420
+		},
+		"call of the wild":{
+			"name":"Call of the Wild",
+			"whid":38727
+		},
+		"call pet":{
+			"name":"Call Pet",
+			"whid":2094
+		},
+		"captain greenskin":{
+			"name":"Captain Greenskin",
+			"whid":456
+		},
+		"captain's parrot":{
+			"name":"Captain's Parrot",
+			"whid":530
+		},
+		"captured jormungar":{
+			"name":"Captured Jormungar",
+			"whid":2522
+		},
+		"carrion grub":{
+			"name":"Carrion Grub",
+			"whid":38985
+		},
+		"cat trick":{
+			"name":"Cat Trick",
+			"whid":39160
+		},
+		"cenarius":{
+			"name":"Cenarius",
+			"whid":36
+		},
+		"charge":{
+			"name":"Charge",
+			"whid":344
+		},
+		"charged hammer":{
+			"name":"Charged Hammer",
+			"whid":2617
+		},
+		"chillmaw":{
+			"name":"Chillmaw",
+			"whid":2682
+		},
+		"chillwind yeti":{
+			"name":"Chillwind Yeti",
+			"whid":90
+		},
+		"cho'gall":{
+			"name":"Cho'gall",
+			"whid":38464
+		},
+		"chromaggus":{
+			"name":"Chromaggus",
+			"whid":2280
+		},
+		"circle of healing":{
+			"name":"Circle of Healing",
+			"whid":1362
+		},
+		"claw":{
+			"name":"Claw",
+			"whid":1050
+		},
+		"cleave":{
+			"name":"Cleave",
+			"whid":940
+		},
+		"cloaked huntress":{
+			"name":"Cloaked Huntress",
+			"whid":39492
+		},
+		"clockwork giant":{
+			"name":"Clockwork Giant",
+			"whid":2233
+		},
+		"clockwork gnome":{
+			"name":"Clockwork Gnome",
+			"whid":2050
+		},
+		"clockwork knight":{
+			"name":"Clockwork Knight",
+			"whid":2500
+		},
+		"cobalt guardian":{
+			"name":"Cobalt Guardian",
+			"whid":2030
+		},
+		"cobra shot":{
+			"name":"Cobra Shot",
+			"whid":2041
+		},
+		"coghammer":{
+			"name":"Coghammer",
+			"whid":2027
+		},
+		"cogmaster":{
+			"name":"Cogmaster",
+			"whid":1932
+		},
+		"cogmaster's wrench":{
+			"name":"Cogmaster's Wrench",
+			"whid":1989
+		},
+		"cold blood":{
+			"name":"Cold Blood",
+			"whid":268
+		},
+		"coldarra drake":{
+			"name":"Coldarra Drake",
+			"whid":2544
+		},
+		"coldlight oracle":{
+			"name":"Coldlight Oracle",
+			"whid":1016
+		},
+		"coldlight seer":{
+			"name":"Coldlight Seer",
+			"whid":453
+		},
+		"coliseum manager":{
+			"name":"Coliseum Manager",
+			"whid":2585
+		},
+		"commanding shout":{
+			"name":"Commanding Shout",
+			"whid":1026
+		},
+		"competitive spirit":{
+			"name":"Competitive Spirit",
+			"whid":2648
+		},
+		"conceal":{
+			"name":"Conceal",
+			"whid":990
+		},
+		"cone of cold":{
+			"name":"Cone of Cold",
+			"whid":430
+		},
+		"confessor paletress":{
+			"name":"Confessor Paletress",
+			"whid":2556
+		},
+		"confuse":{
+			"name":"Confuse",
+			"whid":2564
+		},
+		"consecrate":{
+			"name":"Consecrate",
+			"whid":476
+		},
+		"consecration":{
+			"name":"Consecration",
+			"whid":476
+		},
+		"convert":{
+			"name":"Convert",
+			"whid":2563
+		},
+		"core hound":{
+			"name":"Core Hound",
+			"whid":1687
+		},
+		"core rager":{
+			"name":"Core Rager",
+			"whid":2263
+		},
+		"corrupted healbot":{
+			"name":"Corrupted Healbot",
+			"whid":38528
+		},
+		"corrupted seer":{
+			"name":"Corrupted Seer",
+			"whid":38545
+		},
+		"corruption":{
+			"name":"Corruption",
+			"whid":982
+		},
+		"counterspell":{
+			"name":"Counterspell",
+			"whid":113
+		},
+		"crackle":{
+			"name":"Crackle",
+			"whid":2006
+		},
+		"crazed alchemist":{
+			"name":"Crazed Alchemist",
+			"whid":801
+		},
+		"crazed worshipper":{
+			"name":"Crazed Worshipper",
+			"whid":38958
+		},
+		"crowd favorite":{
+			"name":"Crowd Favorite",
+			"whid":2518
+		},
+		"cruel taskmaster":{
+			"name":"Cruel Taskmaster",
+			"whid":285
+		},
+		"crush":{
+			"name":"Crush",
+			"whid":2020
+		},
+		"cult apothecary":{
+			"name":"Cult Apothecary",
+			"whid":38888
+		},
+		"cult master":{
+			"name":"Cult Master",
+			"whid":811
+		},
+		"cult sorcerer":{
+			"name":"Cult Sorcerer",
+			"whid":38900
+		},
+		"curse of rafaam":{
+			"name":"Curse of Rafaam",
+			"whid":2879
+		},
+		"cursed blade":{
+			"name":"Cursed Blade",
+			"whid":35025
+		},
+		"cutpurse":{
+			"name":"Cutpurse",
+			"whid":2766
+		},
+		"cyclopian horror":{
+			"name":"Cyclopian Horror",
+			"whid":39041
+		},
+		"dalaran aspirant":{
+			"name":"Dalaran Aspirant",
+			"whid":2549
+		},
+		"dalaran mage":{
+			"name":"Dalaran Mage",
+			"whid":175
+		},
+		"dancing swords":{
+			"name":"Dancing Swords",
+			"whid":1913
+		},
+		"dark arakkoa":{
+			"name":"Dark Arakkoa",
+			"whid":38882
+		},
+		"dark bargain":{
+			"name":"Dark Bargain",
+			"whid":2632
+		},
+		"dark cultist":{
+			"name":"Dark Cultist",
+			"whid":1807
+		},
+		"dark iron dwarf":{
+			"name":"Dark Iron Dwarf",
+			"whid":348
+		},
+		"dark iron skulker":{
+			"name":"Dark Iron Skulker",
+			"whid":2291
+		},
+		"dark peddler":{
+			"name":"Dark Peddler",
+			"whid":2895
+		},
+		"dark wispers":{
+			"name":"Dark Wispers",
+			"whid":2009
+		},
+		"darkbomb":{
+			"name":"Darkbomb",
+			"whid":2093
+		},
+		"darkscale healer":{
+			"name":"Darkscale Healer",
+			"whid":582
+		},
+		"darkshire alchemist":{
+			"name":"Darkshire Alchemist",
+			"whid":38764
+		},
+		"darkshire councilman":{
+			"name":"Darkshire Councilman",
+			"whid":38452
+		},
+		"darkshire librarian":{
+			"name":"Darkshire Librarian",
+			"whid":38447
+		},
+		"darkspeaker":{
+			"name":"Darkspeaker",
+			"whid":38436
+		},
+		"darnassus aspirant":{
+			"name":"Darnassus Aspirant",
+			"whid":2782
+		},
+		"dart trap":{
+			"name":"Dart Trap",
+			"whid":2893
+		},
+		"deadly fork":{
+			"name":"Deadly Fork",
+			"whid":39822
+		},
+		"deadly poison":{
+			"name":"Deadly Poison",
+			"whid":459
+		},
+		"deadly shot":{
+			"name":"Deadly Shot",
+			"whid":1093
+		},
+		"death's bite":{
+			"name":"Death's Bite",
+			"whid":1805
+		},
+		"deathlord":{
+			"name":"Deathlord",
+			"whid":1790
+		},
+		"deathwing":{
+			"name":"Deathwing",
+			"whid":834
+		},
+		"deathwing, dragonlord":{
+			"name":"Deathwing, Dragonlord",
+			"whid":38943
+		},
+		"defender of argus":{
+			"name":"Defender of Argus",
+			"whid":763
+		},
+		"defias":{
+			"name":"Defias",
+			"whid":201
+		},
+		"defias ringleader":{
+			"name":"Defias Ringleader",
+			"whid":201
+		},
+		"demented frostcaller":{
+			"name":"Demented Frostcaller",
+			"whid":38412
+		},
+		"demolisher":{
+			"name":"Demolisher",
+			"whid":979
+		},
+		"demonfire":{
+			"name":"Demonfire",
+			"whid":1142
+		},
+		"demonfuse":{
+			"name":"Demonfuse",
+			"whid":2535
+		},
+		"demonheart":{
+			"name":"Demonheart",
+			"whid":1985
+		},
+		"demonwrath":{
+			"name":"Demonwrath",
+			"whid":2301
+		},
+		"desert camel":{
+			"name":"Desert Camel",
+			"whid":2892
+		},
+		"dire wolf alpha":{
+			"name":"Dire Wolf Alpha",
+			"whid":985
+		},
+		"disciple of c'thun":{
+			"name":"Disciple of C'Thun",
+			"whid":38547
+		},
+		"divine favor":{
+			"name":"Divine Favor",
+			"whid":679
+		},
+		"divine spirit":{
+			"name":"Divine Spirit",
+			"whid":1361
+		},
+		"divine strength":{
+			"name":"Divine Strength",
+			"whid":38749
+		},
+		"djinni of zephyrs":{
+			"name":"Djinni of Zephyrs",
+			"whid":2925
+		},
+		"doom!":{
+			"name":"DOOM!",
+			"whid":38770
+		},
+		"doom":{
+			"name":"DOOM!",
+			"whid":38770
+		},
+		"doomcaller":{
+			"name":"Doomcaller",
+			"whid":38795
+		},
+		"doomguard":{
+			"name":"Doomguard",
+			"whid":631
+		},
+		"doomhammer":{
+			"name":"Doomhammer",
+			"whid":352
+		},
+		"doomsayer":{
+			"name":"Doomsayer",
+			"whid":138
+		},
+		"dr. boom":{
+			"name":"Dr. Boom",
+			"whid":2078
+		},
+		"draenei totemcarver":{
+			"name":"Draenei Totemcarver",
+			"whid":2613
+		},
+		"dragon consort":{
+			"name":"Dragon Consort",
+			"whid":2299
+		},
+		"dragon egg":{
+			"name":"Dragon Egg",
+			"whid":2278
+		},
+		"dragon's breath":{
+			"name":"Dragon's Breath",
+			"whid":2284
+		},
+		"dragonhawk rider":{
+			"name":"Dragonhawk Rider",
+			"whid":2533
+		},
+		"dragonkin sorcerer":{
+			"name":"Dragonkin Sorcerer",
+			"whid":2306
+		},
+		"dragonling mechanic":{
+			"name":"Dragonling Mechanic",
+			"whid":523
+		},
+		"drain life":{
+			"name":"Drain Life",
+			"whid":919
+		},
+		"drakonid crusher":{
+			"name":"Drakonid Crusher",
+			"whid":2257
+		},
+		"dread corsair":{
+			"name":"Dread Corsair",
+			"whid":878
+		},
+		"dread infernal":{
+			"name":"Dread Infernal",
+			"whid":1019
+		},
+		"dreadscale":{
+			"name":"Dreadscale",
+			"whid":2634
+		},
+		"dreadsteed":{
+			"name":"Dreadsteed",
+			"whid":2822
+		},
+		"druid of the claw":{
+			"name":"Druid of the Claw",
+			"whid":692
+		},
+		"druid of the fang":{
+			"name":"Druid of the Fang",
+			"whid":2048
+		},
+		"druid of the flame":{
+			"name":"Druid of the Flame",
+			"whid":2292
+		},
+		"druid of the saber":{
+			"name":"Druid of the Saber",
+			"whid":2783
+		},
+		"dunemaul shaman":{
+			"name":"Dunemaul Shaman",
+			"whid":2034
+		},
+		"duplicate":{
+			"name":"Duplicate",
+			"whid":1801
+		},
+		"duskboar":{
+			"name":"Duskboar",
+			"whid":39002
+		},
+		"dust devil":{
+			"name":"Dust Devil",
+			"whid":618
+		},
+		"eadric the pure":{
+			"name":"Eadric the Pure",
+			"whid":2727
+		},
+		"eaglehorn bow":{
+			"name":"Eaglehorn Bow",
+			"whid":1662
+		},
+		"earth elemental":{
+			"name":"Earth Elemental",
+			"whid":1141
+		},
+		"earth shock":{
+			"name":"Earth Shock",
+			"whid":767
+		},
+		"earthen ring farseer":{
+			"name":"Earthen Ring Farseer",
+			"whid":1651
+		},
+		"eater of secrets":{
+			"name":"Eater of Secrets",
+			"whid":38792
+		},
+		"echo of medivh":{
+			"name":"Echo of Medivh",
+			"whid":1941
+		},
+		"echoing ooze":{
+			"name":"Echoing Ooze",
+			"whid":1858
+		},
+		"edwin":{
+			"name":"Edwin",
+			"whid":306
+		},
+		"edwin vancleef":{
+			"name":"Edwin VanCleef",
+			"whid":306
+		},
+		"eerie statue":{
+			"name":"Eerie Statue",
+			"whid":9107
+		},
+		"effigy":{
+			"name":"Effigy",
+			"whid":2541
+		},
+		"eldritch horror":{
+			"name":"Eldritch Horror",
+			"whid":38522
+		},
+		"elemental destruction":{
+			"name":"Elemental Destruction",
+			"whid":2620
+		},
+		"elise":{
+			"name":"Elise",
+			"whid":2951
+		},
+		"elise starseeker":{
+			"name":"Elise Starseeker",
+			"whid":2951
+		},
+		"elite tauren chieftain":{
+			"name":"Elite Tauren Chieftain",
+			"whid":1754
+		},
+		"elven archer":{
+			"name":"Elven Archer",
+			"whid":389
+		},
+		"embrace the shadow":{
+			"name":"Embrace the Shadow",
+			"whid":38439
+		},
+		"emerald drake":{
+			"name":"Emerald Drake",
+			"whid":489
+		},
+		"emperor cobra":{
+			"name":"Emperor Cobra",
+			"whid":1098
+		},
+		"emperor thaurissan":{
+			"name":"Emperor Thaurissan",
+			"whid":2262
+		},
+		"enchanted raven":{
+			"name":"Enchanted Raven",
+			"whid":39350
+		},
+		"enhance-o-mechano":{
+			"name":"Enhance-o-Mechano",
+			"whid":2075
+		},
+		"enter the coliseum":{
+			"name":"Enter the Coliseum",
+			"whid":2654
+		},
+		"entomb":{
+			"name":"Entomb",
+			"whid":3015
+		},
+		"equality":{
+			"name":"Equality",
+			"whid":756
+		},
+		"eternal sentinel":{
+			"name":"Eternal Sentinel",
+			"whid":38265
+		},
+		"ethereal arcanist":{
+			"name":"Ethereal Arcanist",
+			"whid":1737
+		},
+		"ethereal conjurer":{
+			"name":"Ethereal Conjurer",
+			"whid":2875
+		},
+		"ethereal peddler":{
+			"name":"Ethereal Peddler",
+			"whid":39700
+		},
+		"everyfin is awesome":{
+			"name":"Everyfin is Awesome",
+			"whid":3007
+		},
+		"evil heckler":{
+			"name":"Evil Heckler",
+			"whid":2752
+		},
+		"eviscerate":{
+			"name":"Eviscerate",
+			"whid":904
+		},
+		"evolve":{
+			"name":"Evolve",
+			"whid":38266
+		},
+		"evolved kobold":{
+			"name":"Evolved Kobold",
+			"whid":38408
+		},
+		"excavated evil":{
+			"name":"Excavated Evil",
+			"whid":2999
+		},
+		"excess mana":{
+			"name":"Excess Mana",
+			"whid":1725
+		},
+		"execute":{
+			"name":"Execute",
+			"whid":785
+		},
+		"explorer's hat":{
+			"name":"Explorer's Hat",
+			"whid":3001
+		},
+		"explosive sheep":{
+			"name":"Explosive Sheep",
+			"whid":2044
+		},
+		"explosive shot":{
+			"name":"Explosive Shot",
+			"whid":394
+		},
+		"explosive trap":{
+			"name":"Explosive Trap",
+			"whid":585
+		},
+		"eydis darkbane":{
+			"name":"Eydis Darkbane",
+			"whid":2519
+		},
+		"eye for an eye":{
+			"name":"Eye for an Eye",
+			"whid":462
+		},
+		"faceless behemoth":{
+			"name":"Faceless Behemoth",
+			"whid":38521
+		},
+		"faceless manipulator":{
+			"name":"Faceless Manipulator",
+			"whid":531
+		},
+		"faceless shambler":{
+			"name":"Faceless Shambler",
+			"whid":38569
+		},
+		"faceless summoner":{
+			"name":"Faceless Summoner",
+			"whid":38725
+		},
+		"faerie dragon":{
+			"name":"Faerie Dragon",
+			"whid":609
+		},
+		"fallen hero":{
+			"name":"Fallen Hero",
+			"whid":2545
+		},
+		"fan of knives":{
+			"name":"Fan of Knives",
+			"whid":667
+		},
+		"fandral staghelm":{
+			"name":"Fandral Staghelm",
+			"whid":38318
+		},
+		"far sight":{
+			"name":"Far Sight",
+			"whid":818
+		},
+		"fearsome doomguard":{
+			"name":"Fearsome Doomguard",
+			"whid":2624
+		},
+		"feign death":{
+			"name":"Feign Death",
+			"whid":1991
+		},
+		"fel cannon":{
+			"name":"Fel Cannon",
+			"whid":1997
+		},
+		"fel reaver":{
+			"name":"Fel Reaver",
+			"whid":1982
+		},
+		"felguard":{
+			"name":"Felguard",
+			"whid":517
+		},
+		"fen creeper":{
+			"name":"Fen Creeper",
+			"whid":602
+		},
+		"fencing coach":{
+			"name":"Fencing Coach",
+			"whid":2581
+		},
+		"feral rage":{
+			"name":"Feral Rage",
+			"whid":38334
+		},
+		"feral spirit":{
+			"name":"Feral Spirit",
+			"whid":238
+		},
+		"feugen":{
+			"name":"Feugen",
+			"whid":1797
+		},
+		"fierce monkey":{
+			"name":"Fierce Monkey",
+			"whid":2894
+		},
+		"fiery bat":{
+			"name":"Fiery Bat",
+			"whid":38584
+		},
+		"fiery war axe":{
+			"name":"Fiery War Axe",
+			"whid":401
+		},
+		"finley":{
+			"name":"Finley",
+			"whid":2948
+		},
+		"fire elemental":{
+			"name":"Fire Elemental",
+			"whid":189
+		},
+		"fireball":{
+			"name":"Fireball",
+			"whid":315
+		},
+		"fireguard destroyer":{
+			"name":"Fireguard Destroyer",
+			"whid":2290
+		},
+		"firelands portal":{
+			"name":"Firelands Portal",
+			"whid":39715
+		},
+		"fist of jaraxxus":{
+			"name":"Fist of Jaraxxus",
+			"whid":2628
+		},
+		"fjola lightbane":{
+			"name":"Fjola Lightbane",
+			"whid":2748
+		},
+		"flame imp":{
+			"name":"Flame Imp",
+			"whid":1090
+		},
+		"flame juggler":{
+			"name":"Flame Juggler",
+			"whid":2580
+		},
+		"flame lance":{
+			"name":"Flame Lance",
+			"whid":2539
+		},
+		"flame leviathan":{
+			"name":"Flame Leviathan",
+			"whid":1939
+		},
+		"flame strike":{
+			"name":"Flame Strike",
+			"whid":1004
+		},
+		"flamecannon":{
+			"name":"Flamecannon",
+			"whid":1927
+		},
+		"flamestrike":{
+			"name":"Flamestrike",
+			"whid":1004
+		},
+		"flametongue totem":{
+			"name":"Flametongue Totem",
+			"whid":1008
+		},
+		"flamewaker":{
+			"name":"Flamewaker",
+			"whid":2275
+		},
+		"flamewreathed faceless":{
+			"name":"Flamewreathed Faceless",
+			"whid":38263
+		},
+		"flare":{
+			"name":"Flare",
+			"whid":896
+		},
+		"flash heal":{
+			"name":"Flash Heal",
+			"whid":2582
+		},
+		"flesheating ghoul":{
+			"name":"Flesheating Ghoul",
+			"whid":397
+		},
+		"floating watcher":{
+			"name":"Floating Watcher",
+			"whid":2068
+		},
+		"flying machine":{
+			"name":"Flying Machine",
+			"whid":2052
+		},
+		"foe reaper":{
+			"name":"Foe Reaper",
+			"whid":2081
+		},
+		"foe reaper 4000":{
+			"name":"Foe Reaper 4000",
+			"whid":2081
+		},
+		"fool's bane":{
+			"name":"Fool's Bane",
+			"whid":39417
+		},
+		"forbidden ancient":{
+			"name":"Forbidden Ancient",
+			"whid":38340
+		},
+		"forbidden flame":{
+			"name":"Forbidden Flame",
+			"whid":38413
+		},
+		"forbidden healing":{
+			"name":"Forbidden Healing",
+			"whid":38666
+		},
+		"forbidden ritual":{
+			"name":"Forbidden Ritual",
+			"whid":38454
+		},
+		"forbidden shaping":{
+			"name":"Forbidden Shaping",
+			"whid":38434
+		},
+		"force of nature":{
+			"name":"Force of Nature",
+			"whid":493
+		},
+		"force-tank max":{
+			"name":"Force-Tank MAX",
+			"whid":2047
+		},
+		"forgotten torch":{
+			"name":"Forgotten Torch",
+			"whid":2874
+		},
+		"forked lightning":{
+			"name":"Forked Lightning",
+			"whid":299
+		},
+		"forlorn stalker":{
+			"name":"Forlorn Stalker",
+			"whid":38875
+		},
+		"fossilized devilsaur":{
+			"name":"Fossilized Devilsaur",
+			"whid":2945
+		},
+		"freezing trap":{
+			"name":"Freezing Trap",
+			"whid":519
+		},
+		"frigid snobold":{
+			"name":"Frigid Snobold",
+			"whid":2532
+		},
+		"frost elemental":{
+			"name":"Frost Elemental",
+			"whid":512
+		},
+		"frost giant":{
+			"name":"Frost Giant",
+			"whid":2512
+		},
+		"frost nova":{
+			"name":"Frost Nova",
+			"whid":587
+		},
+		"frost shock":{
+			"name":"Frost Shock",
+			"whid":971
+		},
+		"frostbolt":{
+			"name":"Frostbolt",
+			"whid":662
+		},
+		"frostwolf grunt":{
+			"name":"Frostwolf Grunt",
+			"whid":41
+		},
+		"frostwolf warlord":{
+			"name":"Frostwolf Warlord",
+			"whid":496
+		},
+		"frothing berserker":{
+			"name":"Frothing Berserker",
+			"whid":654
+		},
+		"gadgetzan auctioneer":{
+			"name":"Gadgetzan Auctioneer",
+			"whid":932
+		},
+		"gadgetzan jouster":{
+			"name":"Gadgetzan Jouster",
+			"whid":2818
+		},
+		"gahz'rilla":{
+			"name":"Gahz'rilla",
+			"whid":2017
+		},
+		"gallywix's coin":{
+			"name":"Gallywix's Coin",
+			"whid":2277
+		},
+		"gang up":{
+			"name":"Gang Up",
+			"whid":2304
+		},
+		"garrison commander":{
+			"name":"Garrison Commander",
+			"whid":2517
+		},
+		"gazlowe":{
+			"name":"Gazlowe",
+			"whid":2085
+		},
+		"gelbin mekkatorque":{
+			"name":"Gelbin Mekkatorque",
+			"whid":858
+		},
+		"get down":{
+			"name":"Get Down",
+			"whid":584
+		},
+		"giant sand worm":{
+			"name":"Giant Sand Worm",
+			"whid":38909
+		},
+		"gilblin stalker":{
+			"name":"Gilblin Stalker",
+			"whid":2049
+		},
+		"gladiator's longbow":{
+			"name":"Gladiator's Longbow",
+			"whid":311
+		},
+		"glaivezooka":{
+			"name":"Glaivezooka",
+			"whid":2011
+		},
+		"gnomeregan infantry":{
+			"name":"Gnomeregan Infantry",
+			"whid":2066
+		},
+		"gnomish experimenter":{
+			"name":"Gnomish Experimenter",
+			"whid":2060
+		},
+		"gnomish inventor":{
+			"name":"Gnomish Inventor",
+			"whid":308
+		},
+		"goblin auto-barber":{
+			"name":"Goblin Auto-Barber",
+			"whid":1988
+		},
+		"goblin blastmage":{
+			"name":"Goblin Blastmage",
+			"whid":1934
+		},
+		"goblin sapper":{
+			"name":"Goblin Sapper",
+			"whid":2063
+		},
+		"goldshire footman":{
+			"name":"Goldshire Footman",
+			"whid":922
+		},
+		"gorehowl":{
+			"name":"Gorehowl",
+			"whid":810
+		},
+		"gorillabot a-3":{
+			"name":"Gorillabot A-3",
+			"whid":2911
+		},
+		"gormok the impaler":{
+			"name":"Gormok the Impaler",
+			"whid":2724
+		},
+		"grand crusader":{
+			"name":"Grand Crusader",
+			"whid":2510
+		},
+		"grim patron":{
+			"name":"Grim Patron",
+			"whid":2279
+		},
+		"grimscale oracle":{
+			"name":"Grimscale Oracle",
+			"whid":510
+		},
+		"grom":{
+			"name":"Grom",
+			"whid":338
+		},
+		"grommash hellscream":{
+			"name":"Grommash Hellscream",
+			"whid":338
+		},
+		"grotesque dragonhawk":{
+			"name":"Grotesque Dragonhawk",
+			"whid":38533
+		},
+		"grove tender":{
+			"name":"Grove Tender",
+			"whid":2225
+		},
+		"gruul":{
+			"name":"Gruul",
+			"whid":526
+		},
+		"guardian of kings":{
+			"name":"Guardian of Kings",
+			"whid":1068
+		},
+		"gurubashi berserker":{
+			"name":"Gurubashi Berserker",
+			"whid":768
+		},
+		"hallazeal the ascended":{
+			"name":"Hallazeal the Ascended",
+			"whid":38722
+		},
+		"hammer of twilight":{
+			"name":"Hammer of Twilight",
+			"whid":38270
+		},
+		"hammer of wrath":{
+			"name":"Hammer of Wrath",
+			"whid":250
+		},
+		"hand of protection":{
+			"name":"Hand of Protection",
+			"whid":727
+		},
+		"harrison":{
+			"name":"Harrison",
+			"whid":912
+		},
+		"harrison jones":{
+			"name":"Harrison Jones",
+			"whid":912
+		},
+		"harvest golem":{
+			"name":"Harvest Golem",
+			"whid":778
+		},
+		"haunted creeper":{
+			"name":"Haunted Creeper",
+			"whid":1781
+		},
+		"headcrack":{
+			"name":"Headcrack",
+			"whid":708
+		},
+		"healing touch":{
+			"name":"Healing Touch",
+			"whid":773
+		},
+		"healing wave":{
+			"name":"Healing Wave",
+			"whid":2612
+		},
+		"hellfire":{
+			"name":"Hellfire",
+			"whid":950
+		},
+		"hemet nesingwary":{
+			"name":"Hemet Nesingwary",
+			"whid":2088
+		},
+		"herald volazj":{
+			"name":"Herald Volazj",
+			"whid":38922
+		},
+		"heroic strike":{
+			"name":"Heroic Strike",
+			"whid":1007
+		},
+		"hex":{
+			"name":"Hex",
+			"whid":766
+		},
+		"highmane":{
+			"name":"Highmane",
+			"whid":1261
+		},
+		"hobgoblin":{
+			"name":"Hobgoblin",
+			"whid":2072
+		},
+		"hogger":{
+			"name":"Hogger",
+			"whid":640
+		},
+		"hogger, doom of elwynn":{
+			"name":"Hogger, Doom of Elwynn",
+			"whid":38944
+		},
+		"holy champion":{
+			"name":"Holy Champion",
+			"whid":2555
+		},
+		"holy fire":{
+			"name":"Holy Fire",
+			"whid":1365
+		},
+		"holy light":{
+			"name":"Holy Light",
+			"whid":291
+		},
+		"holy nova":{
+			"name":"Holy Nova",
+			"whid":841
+		},
+		"holy smite":{
+			"name":"Holy Smite",
+			"whid":279
+		},
+		"holy wrath":{
+			"name":"Holy Wrath",
+			"whid":435
+		},
+		"hooded acolyte":{
+			"name":"Hooded Acolyte",
+			"whid":39033
+		},
+		"houndmaster":{
+			"name":"Houndmaster",
+			"whid":1003
+		},
+		"huffer":{
+			"name":"Huffer",
+			"whid":100
+		},
+		"huge toad":{
+			"name":"Huge Toad",
+			"whid":2918
+		},
+		"humility":{
+			"name":"Humility",
+			"whid":854
+		},
+		"hungry crab":{
+			"name":"Hungry Crab",
+			"whid":443
+		},
+		"hungry dragon":{
+			"name":"Hungry Dragon",
+			"whid":2283
+		},
+		"hunter's mark":{
+			"name":"Hunter's Mark",
+			"whid":141
+		},
+		"hyena":{
+			"name":"Hyena",
+			"whid":1281
+		},
+		"i am murloc":{
+			"name":"I Am Murloc",
+			"whid":1843
+		},
+		"ice barrier":{
+			"name":"Ice Barrier",
+			"whid":621
+		},
+		"ice block":{
+			"name":"Ice Block",
+			"whid":192
+		},
+		"ice lance":{
+			"name":"Ice Lance",
+			"whid":172
+		},
+		"ice rager":{
+			"name":"Ice Rager",
+			"whid":2594
+		},
+		"icehowl":{
+			"name":"Icehowl",
+			"whid":2725
+		},
+		"illidan":{
+			"name":"Illidan",
+			"whid":556
+		},
+		"illidan stormrage":{
+			"name":"Illidan Stormrage",
+			"whid":556
+		},
+		"illuminator":{
+			"name":"Illuminator",
+			"whid":2057
+		},
+		"imp gang boss":{
+			"name":"Imp Gang Boss",
+			"whid":2288
+		},
+		"imp master":{
+			"name":"Imp Master",
+			"whid":926
+		},
+		"imp-losion":{
+			"name":"Imp-losion",
+			"whid":2013
+		},
+		"infernal":{
+			"name":"Infernal",
+			"whid":1143
+		},
+		"infest":{
+			"name":"Infest",
+			"whid":38329
+		},
+		"infested tauren":{
+			"name":"Infested Tauren",
+			"whid":38784
+		},
+		"infested wolf":{
+			"name":"Infested Wolf",
+			"whid":38734
+		},
+		"injured blademaster":{
+			"name":"Injured Blademaster",
+			"whid":1109
+		},
+		"injured kvaldir":{
+			"name":"Injured Kvaldir",
+			"whid":2502
+		},
+		"inner fire":{
+			"name":"Inner Fire",
+			"whid":376
+		},
+		"inner rage":{
+			"name":"Inner Rage",
+			"whid":22
+		},
+		"innervate":{
+			"name":"Innervate",
+			"whid":254
+		},
+		"iron juggernaut":{
+			"name":"Iron Juggernaut",
+			"whid":2024
+		},
+		"iron sensei":{
+			"name":"Iron Sensei",
+			"whid":1992
+		},
+		"ironbark protector":{
+			"name":"Ironbark Protector",
+			"whid":205
+		},
+		"ironbeak owl":{
+			"name":"Ironbeak Owl",
+			"whid":290
+		},
+		"ironforge portal":{
+			"name":"Ironforge Portal",
+			"whid":39747
+		},
+		"ironforge rifleman":{
+			"name":"Ironforge Rifleman",
+			"whid":339
+		},
+		"ironfur grizzly":{
+			"name":"Ironfur Grizzly",
+			"whid":1182
+		},
+		"ivory knight":{
+			"name":"Ivory Knight",
+			"whid":39439
+		},
+		"jaraxxus":{
+			"name":"Jaraxxus",
+			"whid":777
+		},
+		"jeeves":{
+			"name":"Jeeves",
+			"whid":2062
+		},
+		"jeweled scarab":{
+			"name":"Jeweled Scarab",
+			"whid":2901
+		},
+		"journey below":{
+			"name":"Journey Below",
+			"whid":38393
+		},
+		"jungle moonkin":{
+			"name":"Jungle Moonkin",
+			"whid":2923
+		},
+		"jungle panther":{
+			"name":"Jungle Panther",
+			"whid":921
+		},
+		"junkbot":{
+			"name":"Junkbot",
+			"whid":2074
+		},
+		"justicar trueheart":{
+			"name":"Justicar Trueheart",
+			"whid":2736
+		},
+		"kara kazham!":{
+			"name":"Kara Kazham!",
+			"whid":39197
+		},
+		"keeper of the grove":{
+			"name":"Keeper of the Grove",
+			"whid":601
+		},
+		"keeper of uldaman":{
+			"name":"Keeper of Uldaman",
+			"whid":2889
+		},
+		"kel'thuzad":{
+			"name":"Kel'Thuzad",
+			"whid":1794
+		},
+		"kezan mystic":{
+			"name":"Kezan Mystic",
+			"whid":2042
+		},
+		"kidnapper":{
+			"name":"Kidnapper",
+			"whid":287
+		},
+		"kill command":{
+			"name":"Kill Command",
+			"whid":296
+		},
+		"kindly grandmother":{
+			"name":"Kindly Grandmother",
+			"whid":39481
+		},
+		"king krush":{
+			"name":"King Krush",
+			"whid":1144
+		},
+		"king mukla":{
+			"name":"King Mukla",
+			"whid":1693
+		},
+		"king of beasts":{
+			"name":"King of Beasts",
+			"whid":2014
+		},
+		"king's defender":{
+			"name":"King's Defender",
+			"whid":2756
+		},
+		"king's elekk":{
+			"name":"King's Elekk",
+			"whid":2635
+		},
+		"kirin tor mage":{
+			"name":"Kirin Tor Mage",
+			"whid":748
+		},
+		"klaxxi amber-weaver":{
+			"name":"Klaxxi Amber-Weaver",
+			"whid":38621
+		},
+		"knife juggler":{
+			"name":"Knife Juggler",
+			"whid":1073
+		},
+		"knight of the wild":{
+			"name":"Knight of the Wild",
+			"whid":2788
+		},
+		"kobold geomancer":{
+			"name":"Kobold Geomancer",
+			"whid":672
+		},
+		"kodorider":{
+			"name":"Kodorider",
+			"whid":2598
+		},
+		"kor'kron elite":{
+			"name":"Kor'kron Elite",
+			"whid":28
+		},
+		"kvaldir raider":{
+			"name":"Kvaldir Raider",
+			"whid":2511
+		},
+		"lance carrier":{
+			"name":"Lance Carrier",
+			"whid":2577
+		},
+		"laughing sister":{
+			"name":"Laughing Sister",
+			"whid":340
+		},
+		"lava burst":{
+			"name":"Lava Burst",
+			"whid":864
+		},
+		"lava shock":{
+			"name":"Lava Shock",
+			"whid":2289
+		},
+		"lay on hands":{
+			"name":"Lay on Hands",
+			"whid":594
+		},
+		"leeroy":{
+			"name":"Leeroy",
+			"whid":559
+		},
+		"leeroy jenkins":{
+			"name":"Leeroy Jenkins",
+			"whid":559
+		},
+		"leokk":{
+			"name":"Leokk",
+			"whid":226
+		},
+		"leper gnome":{
+			"name":"Leper Gnome",
+			"whid":658
+		},
+		"light of the naaru":{
+			"name":"Light of the Naaru",
+			"whid":1933
+		},
+		"light's champion":{
+			"name":"Light's Champion",
+			"whid":2259
+		},
+		"light's justice":{
+			"name":"Light's Justice",
+			"whid":383
+		},
+		"lightbomb":{
+			"name":"Lightbomb",
+			"whid":1938
+		},
+		"lightning bolt":{
+			"name":"Lightning Bolt",
+			"whid":505
+		},
+		"lightning storm":{
+			"name":"Lightning Storm",
+			"whid":629
+		},
+		"lightspawn":{
+			"name":"Lightspawn",
+			"whid":886
+		},
+		"lightwarden":{
+			"name":"Lightwarden",
+			"whid":1655
+		},
+		"lightwell":{
+			"name":"Lightwell",
+			"whid":797
+		},
+		"lil' exorcist":{
+			"name":"Lil' Exorcist",
+			"whid":2065
+		},
+		"living roots":{
+			"name":"Living Roots",
+			"whid":2792
+		},
+		"loatheb":{
+			"name":"Loatheb",
+			"whid":1914
+		},
+		"lock and load":{
+			"name":"Lock and Load",
+			"whid":2484
+		},
+		"loot hoarder":{
+			"name":"Loot Hoarder",
+			"whid":251
+		},
+		"lord jaraxxus":{
+			"name":"Lord Jaraxxus",
+			"whid":777
+		},
+		"lord of the arena":{
+			"name":"Lord of the Arena",
+			"whid":157
+		},
+		"lorewalker cho":{
+			"name":"Lorewalker Cho",
+			"whid":1135
+		},
+		"lost tallstrider":{
+			"name":"Lost Tallstrider",
+			"whid":2039
+		},
+		"lowly squire":{
+			"name":"Lowly Squire",
+			"whid":2486
+		},
+		"mad bomber":{
+			"name":"Mad Bomber",
+			"whid":762
+		},
+		"mad scientist":{
+			"name":"Mad Scientist",
+			"whid":1783
+		},
+		"madder bomber":{
+			"name":"Madder Bomber",
+			"whid":2058
+		},
+		"maelstrom portal":{
+			"name":"Maelstrom Portal",
+			"whid":39712
+		},
+		"maexxna":{
+			"name":"Maexxna",
+			"whid":1791
+		},
+		"magma rager":{
+			"name":"Magma Rager",
+			"whid":1653
+		},
+		"magnataur alpha":{
+			"name":"Magnataur Alpha",
+			"whid":2753
+		},
+		"maiden of the lake":{
+			"name":"Maiden of the Lake",
+			"whid":2488
+		},
+		"majordomo executus":{
+			"name":"Majordomo Executus",
+			"whid":2281
+		},
+		"mal'ganis":{
+			"name":"Mal'Ganis",
+			"whid":1986
+		},
+		"malchezaar's imp":{
+			"name":"Malchezaar's Imp",
+			"whid":39740
+		},
+		"malkorok":{
+			"name":"Malkorok",
+			"whid":38739
+		},
+		"malorne":{
+			"name":"Malorne",
+			"whid":2003
+		},
+		"malygos":{
+			"name":"Malygos",
+			"whid":436
+		},
+		"mana addict":{
+			"name":"Mana Addict",
+			"whid":12
+		},
+		"mana tide totem":{
+			"name":"Mana Tide Totem",
+			"whid":513
+		},
+		"mana wraith":{
+			"name":"Mana Wraith",
+			"whid":715
+		},
+		"mana wyrm":{
+			"name":"Mana Wyrm",
+			"whid":405
+		},
+		"mark of nature":{
+			"name":"Mark of Nature",
+			"whid":151
+		},
+		"mark of the wild":{
+			"name":"Mark of the Wild",
+			"whid":213
+		},
+		"mark of y'shaarj":{
+			"name":"Mark of Y'Shaarj",
+			"whid":38337
+		},
+		"mass dispel":{
+			"name":"Mass Dispel",
+			"whid":1366
+		},
+		"master jouster":{
+			"name":"Master Jouster",
+			"whid":2507
+		},
+		"master of ceremonies":{
+			"name":"Master of Ceremonies",
+			"whid":2493
+		},
+		"master of disguise":{
+			"name":"Master of Disguise",
+			"whid":887
+		},
+		"master of evolution":{
+			"name":"Master of Evolution",
+			"whid":39008
+		},
+		"master swordsmith":{
+			"name":"Master Swordsmith",
+			"whid":351
+		},
+		"mech-bear-cat":{
+			"name":"Mech-Bear-Cat",
+			"whid":2002
+		},
+		"mechanical yeti":{
+			"name":"Mechanical Yeti",
+			"whid":2046
+		},
+		"mechwarper":{
+			"name":"Mechwarper",
+			"whid":1940
+		},
+		"medivh, the guardian":{
+			"name":"Medivh, the Guardian",
+			"whid":39841
+		},
+		"medivh's valet":{
+			"name":"Medivh's Valet",
+			"whid":39767
+		},
+		"mekgineer thermaplugg":{
+			"name":"Mekgineer Thermaplugg",
+			"whid":2084
+		},
+		"menagerie magician":{
+			"name":"Menagerie Magician",
+			"whid":39269
+		},
+		"menagerie warden":{
+			"name":"Menagerie Warden",
+			"whid":39696
+		},
+		"metaltooth leaper":{
+			"name":"Metaltooth Leaper",
+			"whid":2016
+		},
+		"micro machine":{
+			"name":"Micro Machine",
+			"whid":2071
+		},
+		"midnight drake":{
+			"name":"Midnight Drake",
+			"whid":38957
+		},
+		"millhouse manastorm":{
+			"name":"Millhouse Manastorm",
+			"whid":855
+		},
+		"mimiron's head":{
+			"name":"Mimiron's Head",
+			"whid":2079
+		},
+		"mind blast":{
+			"name":"Mind Blast",
+			"whid":545
+		},
+		"mind control":{
+			"name":"Mind Control",
+			"whid":8
+		},
+		"mind control tech":{
+			"name":"Mind Control Tech",
+			"whid":734
+		},
+		"mind vision":{
+			"name":"Mind Vision",
+			"whid":1099
+		},
+		"mindgames":{
+			"name":"Mindgames",
+			"whid":145
+		},
+		"mini-mage":{
+			"name":"Mini-Mage",
+			"whid":2077
+		},
+		"mire keeper":{
+			"name":"Mire Keeper",
+			"whid":38718
+		},
+		"mirror entity":{
+			"name":"Mirror Entity",
+			"whid":195
+		},
+		"mirror image":{
+			"name":"Mirror Image",
+			"whid":1084
+		},
+		"misdirection":{
+			"name":"Misdirection",
+			"whid":1091
+		},
+		"misha":{
+			"name":"Misha",
+			"whid":959
+		},
+		"mistress of pain":{
+			"name":"Mistress of Pain",
+			"whid":2172
+		},
+		"moat lurker":{
+			"name":"Moat Lurker",
+			"whid":39465
+		},
+		"mogor the ogre":{
+			"name":"Mogor the Ogre",
+			"whid":2080
+		},
+		"mogor's champion":{
+			"name":"Mogor's Champion",
+			"whid":2491
+		},
+		"mogu'shan warden":{
+			"name":"Mogu'shan Warden",
+			"whid":700
+		},
+		"molten giant":{
+			"name":"Molten Giant",
+			"whid":1372
+		},
+		"moonfire":{
+			"name":"Moonfire",
+			"whid":467
+		},
+		"moonglade portal":{
+			"name":"Moonglade Portal",
+			"whid":39714
+		},
+		"moroes":{
+			"name":"Moroes",
+			"whid":39453
+		},
+		"mortal coil":{
+			"name":"Mortal Coil",
+			"whid":1092
+		},
+		"mortal strike":{
+			"name":"Mortal Strike",
+			"whid":804
+		},
+		"mountain giant":{
+			"name":"Mountain Giant",
+			"whid":993
+		},
+		"mounted raptor":{
+			"name":"Mounted Raptor",
+			"whid":2922
+		},
+		"mukla":{
+			"name":"Mukla",
+			"whid":1693
+		},
+		"mukla, tyrant of the vale":{
+			"name":"Mukla, Tyrant of the Vale",
+			"whid":38468
+		},
+		"mukla's champion":{
+			"name":"Mukla's Champion",
+			"whid":2497
+		},
+		"mulch":{
+			"name":"Mulch",
+			"whid":2793
+		},
+		"multi-shot":{
+			"name":"Multi-Shot",
+			"whid":292
+		},
+		"murloc knight":{
+			"name":"Murloc Knight",
+			"whid":2655
+		},
+		"murloc raider":{
+			"name":"Murloc Raider",
+			"whid":191
+		},
+		"murloc tidecaller":{
+			"name":"Murloc Tidecaller",
+			"whid":475
+		},
+		"murloc tidehunter":{
+			"name":"Murloc Tidehunter",
+			"whid":976
+		},
+		"murloc tinyfin":{
+			"name":"Murloc Tinyfin",
+			"whid":13879
+		},
+		"murloc warleader":{
+			"name":"Murloc Warleader",
+			"whid":1063
+		},
+		"museum curator":{
+			"name":"Museum Curator",
+			"whid":2878
+		},
+		"muster for battle":{
+			"name":"Muster for Battle",
+			"whid":2029
+		},
+		"mysterious challenger":{
+			"name":"Mysterious Challenger",
+			"whid":2726
+		},
+		"n'zoth":{
+			"name":"N'Zoth",
+			"whid":38496
+		},
+		"n'zoth, the corruptor":{
+			"name":"N'Zoth, the Corruptor",
+			"whid":38496
+		},
+		"n'zoth's first mate":{
+			"name":"N'Zoth's First Mate",
+			"whid":38914
+		},
+		"naga sea witch":{
+			"name":"Naga Sea Witch",
+			"whid":2910
+		},
+		"nat pagle":{
+			"name":"Nat Pagle",
+			"whid":1147
+		},
+		"nat, the darkfisher":{
+			"name":"Nat, the Darkfisher",
+			"whid":39046
+		},
+		"naturalize":{
+			"name":"Naturalize",
+			"whid":233
+		},
+		"nefarian":{
+			"name":"Nefarian",
+			"whid":2261
+		},
+		"neptulon":{
+			"name":"Neptulon",
+			"whid":2010
+		},
+		"nerub'ar weblord":{
+			"name":"Nerub'ar Weblord",
+			"whid":1800
+		},
+		"nerubian egg":{
+			"name":"Nerubian Egg",
+			"whid":1786
+		},
+		"nerubian prophet":{
+			"name":"Nerubian Prophet",
+			"whid":38517
+		},
+		"netherspite historian":{
+			"name":"Netherspite Historian",
+			"whid":39554
+		},
+		"nexus-champion saraad":{
+			"name":"Nexus-Champion Saraad",
+			"whid":2683
+		},
+		"nightbane templar":{
+			"name":"Nightbane Templar",
+			"whid":39477
+		},
+		"nightblade":{
+			"name":"Nightblade",
+			"whid":670
+		},
+		"noble sacrifice":{
+			"name":"Noble Sacrifice",
+			"whid":584
+		},
+		"north sea kraken":{
+			"name":"North Sea Kraken",
+			"whid":2520
+		},
+		"northshire cleric":{
+			"name":"Northshire Cleric",
+			"whid":1650
+		},
+		"nourish":{
+			"name":"Nourish",
+			"whid":95
+		},
+		"novice engineer":{
+			"name":"Novice Engineer",
+			"whid":284
+		},
+		"nozdormu":{
+			"name":"Nozdormu",
+			"whid":411
+		},
+		"nzoth":{
+			"name":"NZoth",
+			"whid":38496
+		},
+		"oasis snapjaw":{
+			"name":"Oasis Snapjaw",
+			"whid":1370
+		},
+		"obsidian destroyer":{
+			"name":"Obsidian Destroyer",
+			"whid":2881
+		},
+		"ogre brute":{
+			"name":"Ogre Brute",
+			"whid":2033
+		},
+		"ogre magi":{
+			"name":"Ogre Magi",
+			"whid":995
+		},
+		"ogre ninja":{
+			"name":"Ogre Ninja",
+			"whid":2056
+		},
+		"ogre warmaul":{
+			"name":"Ogre Warmaul",
+			"whid":2022
+		},
+		"old murk-eye":{
+			"name":"Old Murk-Eye",
+			"whid":736
+		},
+		"on the hunt":{
+			"name":"On the Hunt",
+			"whid":38377
+		},
+		"one-eyed cheat":{
+			"name":"One-eyed Cheat",
+			"whid":1990
+		},
+		"onyx bishop":{
+			"name":"Onyx Bishop",
+			"whid":39374
+		},
+		"onyxia":{
+			"name":"Onyxia",
+			"whid":363
+		},
+		"orgrimmar aspirant":{
+			"name":"Orgrimmar Aspirant",
+			"whid":2711
+		},
+		"owl":{
+			"name":"Owl",
+			"whid":290
+		},
+		"pagle":{
+			"name":"Pagle",
+			"whid":1147
+		},
+		"pantry spider":{
+			"name":"Pantry Spider",
+			"whid":39207
+		},
+		"patient assassin":{
+			"name":"Patient Assassin",
+			"whid":1133
+		},
+		"perdition's blade":{
+			"name":"Perdition's Blade",
+			"whid":391
+		},
+		"piloted shredder":{
+			"name":"Piloted Shredder",
+			"whid":2064
+		},
+		"piloted sky golem":{
+			"name":"Piloted Sky Golem",
+			"whid":2073
+		},
+		"pint-sized summoner":{
+			"name":"Pint-Sized Summoner",
+			"whid":37
+		},
+		"pit fighter":{
+			"name":"Pit Fighter",
+			"whid":2521
+		},
+		"pit lord":{
+			"name":"Pit Lord",
+			"whid":783
+		},
+		"pit snake":{
+			"name":"Pit Snake",
+			"whid":2882
+		},
+		"poison seeds":{
+			"name":"Poison Seeds",
+			"whid":1802
+		},
+		"poisoned blade":{
+			"name":"Poisoned Blade",
+			"whid":2763
+		},
+		"polluted hoarder":{
+			"name":"Polluted Hoarder",
+			"whid":38961
+		},
+		"polymorph":{
+			"name":"Polymorph",
+			"whid":77
+		},
+		"polymorph: boar":{
+			"name":"Polymorph: Boar",
+			"whid":2542
+		},
+		"pompous thespian":{
+			"name":"Pompous Thespian",
+			"whid":39476
+		},
+		"possessed villager":{
+			"name":"Possessed Villager",
+			"whid":38774
+		},
+		"power of the horde":{
+			"name":"Power of the Horde",
+			"whid":1846
+		},
+		"power of the wild":{
+			"name":"Power of the Wild",
+			"whid":503
+		},
+		"power overwhelming":{
+			"name":"Power Overwhelming",
+			"whid":846
+		},
+		"power word: glory":{
+			"name":"Power Word: Glory",
+			"whid":2568
+		},
+		"power word: shield":{
+			"name":"Power Word: Shield",
+			"whid":613
+		},
+		"power word: tentacles":{
+			"name":"Power Word: Tentacles",
+			"whid":38426
+		},
+		"powermace":{
+			"name":"Powermace",
+			"whid":2004
+		},
+		"powershot":{
+			"name":"Powershot",
+			"whid":2638
+		},
+		"preparation":{
+			"name":"Preparation",
+			"whid":1158
+		},
+		"priest of the feast":{
+			"name":"Priest of the Feast",
+			"whid":39442
+		},
+		"priestess of elune":{
+			"name":"Priestess of Elune",
+			"whid":424
+		},
+		"primal fusion":{
+			"name":"Primal Fusion",
+			"whid":38262
+		},
+		"prince malchezaar":{
+			"name":"Prince Malchezaar",
+			"whid":39840
+		},
+		"princess huhuran":{
+			"name":"Princess Huhuran",
+			"whid":38910
+		},
+		"prophet velen":{
+			"name":"Prophet Velen",
+			"whid":9
+		},
+		"protect the king!":{
+			"name":"Protect the King!",
+			"whid":39495
+		},
+		"psych-o-tron":{
+			"name":"Psych-o-Tron",
+			"whid":38526
+		},
+		"puddlestomper":{
+			"name":"Puddlestomper",
+			"whid":2032
+		},
+		"purify":{
+			"name":"Purify",
+			"whid":39468
+		},
+		"pyroblast":{
+			"name":"Pyroblast",
+			"whid":1087
+		},
+		"quartermaster":{
+			"name":"Quartermaster",
+			"whid":2028
+		},
+		"questing adventurer":{
+			"name":"Questing Adventurer",
+			"whid":791
+		},
+		"quick shot":{
+			"name":"Quick Shot",
+			"whid":2260
+		},
+		"raging worgen":{
+			"name":"Raging Worgen",
+			"whid":1155
+		},
+		"ragnaros":{
+			"name":"Ragnaros",
+			"whid":374
+		},
+		"ragnaros the firelord":{
+			"name":"Ragnaros the Firelord",
+			"whid":374
+		},
+		"ragnaros, lightlord":{
+			"name":"Ragnaros, Lightlord",
+			"whid":38758
+		},
+		"raid leader":{
+			"name":"Raid Leader",
+			"whid":1401
+		},
+		"rallying blade":{
+			"name":"Rallying Blade",
+			"whid":38745
+		},
+		"ram wrangler":{
+			"name":"Ram Wrangler",
+			"whid":2552
+		},
+		"rampage":{
+			"name":"Rampage",
+			"whid":1108
+		},
+		"ravaging ghoul":{
+			"name":"Ravaging Ghoul",
+			"whid":38530
+		},
+		"raven idol":{
+			"name":"Raven Idol",
+			"whid":13335
+		},
+		"ravenholdt assassin":{
+			"name":"Ravenholdt Assassin",
+			"whid":134
+		},
+		"razorfen hunter":{
+			"name":"Razorfen Hunter",
+			"whid":257
+		},
+		"reckless rocketeer":{
+			"name":"Reckless Rocketeer",
+			"whid":445
+		},
+		"recombobulator":{
+			"name":"Recombobulator",
+			"whid":2076
+		},
+		"recruiter":{
+			"name":"Recruiter",
+			"whid":2509
+		},
+		"recycle":{
+			"name":"Recycle",
+			"whid":1995
+		},
+		"redemption":{
+			"name":"Redemption",
+			"whid":140
+		},
+		"refreshment vendor":{
+			"name":"Refreshment Vendor",
+			"whid":2704
+		},
+		"reincarnate":{
+			"name":"Reincarnate",
+			"whid":1809
+		},
+		"reliquary seeker":{
+			"name":"Reliquary Seeker",
+			"whid":13334
+		},
+		"rend blackhand":{
+			"name":"Rend Blackhand",
+			"whid":2308
+		},
+		"reno":{
+			"name":"Reno",
+			"whid":2883
+		},
+		"reno jackson":{
+			"name":"Reno Jackson",
+			"whid":2883
+		},
+		"renounce darkness":{
+			"name":"Renounce Darkness",
+			"whid":38461
+		},
+		"repentance":{
+			"name":"Repentance",
+			"whid":232
+		},
+		"resurrect":{
+			"name":"Resurrect",
+			"whid":2298
+		},
+		"revenge":{
+			"name":"Revenge",
+			"whid":2296
+		},
+		"rhino":{
+			"name":"Rhino",
+			"whid":699
+		},
+		"rhonin":{
+			"name":"Rhonin",
+			"whid":2546
+		},
+		"river crocolisk":{
+			"name":"River Crocolisk",
+			"whid":1369
+		},
+		"rockbiter":{
+			"name":"Rockbiter",
+			"whid":239
+		},
+		"rockbiter weapon":{
+			"name":"Rockbiter Weapon",
+			"whid":239
+		},
+		"rogues do it":{
+			"name":"Rogues Do It",
+			"whid":1845
+		},
+		"rumbling elemental":{
+			"name":"Rumbling Elemental",
+			"whid":2888
+		},
+		"runic egg":{
+			"name":"Runic Egg",
+			"whid":39433
+		},
+		"sabotage":{
+			"name":"Sabotage",
+			"whid":2015
+		},
+		"saboteur":{
+			"name":"Saboteur",
+			"whid":2576
+		},
+		"sacred trial":{
+			"name":"Sacred Trial",
+			"whid":2899
+		},
+		"sacrificial pact":{
+			"name":"Sacrificial Pact",
+			"whid":163
+		},
+		"salty dog":{
+			"name":"Salty Dog",
+			"whid":2038
+		},
+		"sap":{
+			"name":"Sap",
+			"whid":461
+		},
+		"saraad":{
+			"name":"Saraad",
+			"whid":2683
+		},
+		"savage combatant":{
+			"name":"Savage Combatant",
+			"whid":2780
+		},
+		"savage roar":{
+			"name":"Savage Roar",
+			"whid":742
+		},
+		"savagery":{
+			"name":"Savagery",
+			"whid":481
+		},
+		"savannah highmane":{
+			"name":"Savannah Highmane",
+			"whid":1261
+		},
+		"scaled nightmare":{
+			"name":"Scaled Nightmare",
+			"whid":38832
+		},
+		"scarlet crusader":{
+			"name":"Scarlet Crusader",
+			"whid":642
+		},
+		"scarlet purifier":{
+			"name":"Scarlet Purifier",
+			"whid":2069
+		},
+		"scavenging hyena":{
+			"name":"Scavenging Hyena",
+			"whid":1281
+		},
+		"screwjank clunker":{
+			"name":"Screwjank Clunker",
+			"whid":2023
+		},
+		"sea giant":{
+			"name":"Sea Giant",
+			"whid":211
+		},
+		"sea reaver":{
+			"name":"Sea Reaver",
+			"whid":2717
+		},
+		"seal of champions":{
+			"name":"Seal of Champions",
+			"whid":2723
+		},
+		"seal of light":{
+			"name":"Seal of Light",
+			"whid":2025
+		},
+		"secretkeeper":{
+			"name":"Secretkeeper",
+			"whid":158
+		},
+		"selfless hero":{
+			"name":"Selfless Hero",
+			"whid":38740
+		},
+		"sen'jin shieldmasta":{
+			"name":"Sen'jin Shieldmasta",
+			"whid":635
+		},
+		"sense demons":{
+			"name":"Sense Demons",
+			"whid":860
+		},
+		"servant of yogg-saron":{
+			"name":"Servant of Yogg-Saron",
+			"whid":38414
+		},
+		"shade of naxxramas":{
+			"name":"Shade of Naxxramas",
+			"whid":1784
+		},
+		"shado-pan rider":{
+			"name":"Shado-Pan Rider",
+			"whid":2765
+		},
+		"shadow bolt":{
+			"name":"Shadow Bolt",
+			"whid":914
+		},
+		"shadow madness":{
+			"name":"Shadow Madness",
+			"whid":220
+		},
+		"shadow strike":{
+			"name":"Shadow Strike",
+			"whid":38578
+		},
+		"shadow word: death":{
+			"name":"Shadow Word: Death",
+			"whid":1363
+		},
+		"shadow word: horror":{
+			"name":"Shadow Word: Horror",
+			"whid":38433
+		},
+		"shadow word: pain":{
+			"name":"Shadow Word: Pain",
+			"whid":1367
+		},
+		"shadowbomber":{
+			"name":"Shadowbomber",
+			"whid":1937
+		},
+		"shadowboxer":{
+			"name":"Shadowboxer",
+			"whid":2040
+		},
+		"shadowcaster":{
+			"name":"Shadowcaster",
+			"whid":38876
+		},
+		"shadowfiend":{
+			"name":"Shadowfiend",
+			"whid":2566
+		},
+		"shadowflame":{
+			"name":"Shadowflame",
+			"whid":147
+		},
+		"shadowform":{
+			"name":"Shadowform",
+			"whid":1368
+		},
+		"shadowstep":{
+			"name":"Shadowstep",
+			"whid":365
+		},
+		"shady dealer":{
+			"name":"Shady Dealer",
+			"whid":2768
+		},
+		"shatter":{
+			"name":"Shatter",
+			"whid":38407
+		},
+		"shattered sun cleric":{
+			"name":"Shattered Sun Cleric",
+			"whid":608
+		},
+		"shield block":{
+			"name":"Shield Block",
+			"whid":1023
+		},
+		"shield slam":{
+			"name":"Shield Slam",
+			"whid":546
+		},
+		"shieldbearer":{
+			"name":"Shieldbearer",
+			"whid":866
+		},
+		"shielded minibot":{
+			"name":"Shielded Minibot",
+			"whid":2026
+		},
+		"shieldmaiden":{
+			"name":"Shieldmaiden",
+			"whid":2021
+		},
+		"shieldmasta":{
+			"name":"Shieldmasta",
+			"whid":635
+		},
+		"shifter zerus":{
+			"name":"Shifter Zerus",
+			"whid":38475
+		},
+		"shifting shade":{
+			"name":"Shifting Shade",
+			"whid":39034
+		},
+		"ship's cannon":{
+			"name":"Ship's Cannon",
+			"whid":2043
+		},
+		"shiv":{
+			"name":"Shiv",
+			"whid":573
+		},
+		"shrinkmeister":{
+			"name":"Shrinkmeister",
+			"whid":1936
+		},
+		"si:7 agent":{
+			"name":"SI:7 Agent",
+			"whid":1117
+		},
+		"sideshow spelleater":{
+			"name":"Sideshow Spelleater",
+			"whid":2573
+		},
+		"siege engine":{
+			"name":"Siege Engine",
+			"whid":2054
+		},
+		"silence":{
+			"name":"Silence",
+			"whid":1189
+		},
+		"silent knight":{
+			"name":"Silent Knight",
+			"whid":2579
+		},
+		"silithid swarmer":{
+			"name":"Silithid Swarmer",
+			"whid":38304
+		},
+		"siltfin spiritwalker":{
+			"name":"Siltfin Spiritwalker",
+			"whid":2008
+		},
+		"silver hand knight":{
+			"name":"Silver Hand Knight",
+			"whid":69
+		},
+		"silver hand regent":{
+			"name":"Silver Hand Regent",
+			"whid":2503
+		},
+		"silverback patriarch":{
+			"name":"Silverback Patriarch",
+			"whid":67
+		},
+		"silvermoon guardian":{
+			"name":"Silvermoon Guardian",
+			"whid":34
+		},
+		"silvermoon portal":{
+			"name":"Silvermoon Portal",
+			"whid":39716
+		},
+		"silverware golem":{
+			"name":"Silverware Golem",
+			"whid":39380
+		},
+		"sinister strike":{
+			"name":"Sinister Strike",
+			"whid":710
+		},
+		"siphon soul":{
+			"name":"Siphon Soul",
+			"whid":1100
+		},
+		"sir finley mrrgglton":{
+			"name":"Sir Finley Mrrgglton",
+			"whid":2948
+		},
+		"skeram cultist":{
+			"name":"Skeram Cultist",
+			"whid":39118
+		},
+		"skycap'n kragg":{
+			"name":"Skycap'n Kragg",
+			"whid":2757
+		},
+		"slam":{
+			"name":"Slam",
+			"whid":1074
+		},
+		"sludge belcher":{
+			"name":"Sludge Belcher",
+			"whid":1793
+		},
+		"snake trap":{
+			"name":"Snake Trap",
+			"whid":455
+		},
+		"sneed's old shredder":{
+			"name":"Sneed's Old Shredder",
+			"whid":2082
+		},
+		"snipe":{
+			"name":"Snipe",
+			"whid":814
+		},
+		"snowchugger":{
+			"name":"Snowchugger",
+			"whid":1928
+		},
+		"soggoth the slitherer":{
+			"name":"Soggoth the Slitherer",
+			"whid":39119
+		},
+		"solemn vigil":{
+			"name":"Solemn Vigil",
+			"whid":2274
+		},
+		"soot spewer":{
+			"name":"Soot Spewer",
+			"whid":2249
+		},
+		"sorcerer's apprentice":{
+			"name":"Sorcerer's Apprentice",
+			"whid":614
+		},
+		"soul of the forest":{
+			"name":"Soul of the Forest",
+			"whid":381
+		},
+		"soulfire":{
+			"name":"Soulfire",
+			"whid":974
+		},
+		"southsea captain":{
+			"name":"Southsea Captain",
+			"whid":680
+		},
+		"southsea deckhand":{
+			"name":"Southsea Deckhand",
+			"whid":724
+		},
+		"southsea squidface":{
+			"name":"Southsea Squidface",
+			"whid":38825
+		},
+		"sparring partner":{
+			"name":"Sparring Partner",
+			"whid":2733
+		},
+		"spawn of n'zoth":{
+			"name":"Spawn of N'Zoth",
+			"whid":38797
+		},
+		"spawn of shadows":{
+			"name":"Spawn of Shadows",
+			"whid":2551
+		},
+		"spectral knight":{
+			"name":"Spectral Knight",
+			"whid":1789
+		},
+		"spellbender":{
+			"name":"Spellbender",
+			"whid":366
+		},
+		"spellbreaker":{
+			"name":"Spellbreaker",
+			"whid":754
+		},
+		"spellslinger":{
+			"name":"Spellslinger",
+			"whid":2571
+		},
+		"spider tank":{
+			"name":"Spider Tank",
+			"whid":2012
+		},
+		"spirit claws":{
+			"name":"Spirit Claws",
+			"whid":39694
+		},
+		"spiteful smith":{
+			"name":"Spiteful Smith",
+			"whid":61
+		},
+		"spreading madness":{
+			"name":"Spreading Madness",
+			"whid":38456
+		},
+		"sprint":{
+			"name":"Sprint",
+			"whid":630
+		},
+		"squirming tentacle":{
+			"name":"Squirming Tentacle",
+			"whid":39003
+		},
+		"stablemaster":{
+			"name":"Stablemaster",
+			"whid":2639
+		},
+		"stalagg":{
+			"name":"Stalagg",
+			"whid":1796
+		},
+		"stampeding kodo":{
+			"name":"Stampeding Kodo",
+			"whid":1371
+		},
+		"stand against darkness":{
+			"name":"Stand Against Darkness",
+			"whid":38843
+		},
+		"starfall":{
+			"name":"Starfall",
+			"whid":86
+		},
+		"starfire":{
+			"name":"Starfire",
+			"whid":823
+		},
+		"starving buzzard":{
+			"name":"Starving Buzzard",
+			"whid":1241
+		},
+		"steamwheedle sniper":{
+			"name":"Steamwheedle Sniper",
+			"whid":2055
+		},
+		"steward of darkshire":{
+			"name":"Steward of Darkshire",
+			"whid":38911
+		},
+		"stoneskin gargoyle":{
+			"name":"Stoneskin Gargoyle",
+			"whid":1861
+		},
+		"stonesplinter trogg":{
+			"name":"Stonesplinter Trogg",
+			"whid":2035
+		},
+		"stonetusk boar":{
+			"name":"Stonetusk Boar",
+			"whid":648
+		},
+		"stormcrack":{
+			"name":"Stormcrack",
+			"whid":38724
+		},
+		"stormforged axe":{
+			"name":"Stormforged Axe",
+			"whid":960
+		},
+		"stormpike commando":{
+			"name":"Stormpike Commando",
+			"whid":413
+		},
+		"stormwind champion":{
+			"name":"Stormwind Champion",
+			"whid":753
+		},
+		"stormwind knight":{
+			"name":"Stormwind Knight",
+			"whid":622
+		},
+		"stranglethorn tiger":{
+			"name":"Stranglethorn Tiger",
+			"whid":68
+		},
+		"succubus":{
+			"name":"Succubus",
+			"whid":592
+		},
+		"summoning portal":{
+			"name":"Summoning Portal",
+			"whid":969
+		},
+		"summoning stone":{
+			"name":"Summoning Stone",
+			"whid":2958
+		},
+		"sunfury protector":{
+			"name":"Sunfury Protector",
+			"whid":891
+		},
+		"sunwalker":{
+			"name":"Sunwalker",
+			"whid":759
+		},
+		"swashburglar":{
+			"name":"Swashburglar",
+			"whid":39698
+		},
+		"swipe":{
+			"name":"Swipe",
+			"whid":64
+		},
+		"sword of justice":{
+			"name":"Sword of Justice",
+			"whid":643
+		},
+		"sylvanas":{
+			"name":"Sylvanas",
+			"whid":1721
+		},
+		"sylvanas windrunner":{
+			"name":"Sylvanas Windrunner",
+			"whid":1721
+		},
+		"target dummy":{
+			"name":"Target Dummy",
+			"whid":2061
+		},
+		"tauren warrior":{
+			"name":"Tauren Warrior",
+			"whid":45
+		},
+		"taz'dingo":{
+			"name":"Taz'dingo",
+			"whid":635
+		},
+		"temple enforcer":{
+			"name":"Temple Enforcer",
+			"whid":1364
+		},
+		"tentacle of n'zoth":{
+			"name":"Tentacle of N'Zoth",
+			"whid":38532
+		},
+		"tentacles for arms":{
+			"name":"Tentacles for Arms",
+			"whid":38279
+		},
+		"thaddius":{
+			"name":"Thaddius",
+			"whid":1798
+		},
+		"thalnos":{
+			"name":"Thalnos",
+			"whid":749
+		},
+		"the beast":{
+			"name":"The Beast",
+			"whid":962
+		},
+		"the boogeymonster":{
+			"name":"The Boogeymonster",
+			"whid":38895
+		},
+		"the coin":{
+			"name":"The Coin",
+			"whid":1746
+		},
+		"the curator":{
+			"name":"The Curator",
+			"whid":39225
+		},
+		"the mistcaller":{
+			"name":"The Mistcaller",
+			"whid":2618
+		},
+		"the skeleton knight":{
+			"name":"The Skeleton Knight",
+			"whid":2681
+		},
+		"thing from below":{
+			"name":"Thing from Below",
+			"whid":38267
+		},
+		"thistle tea":{
+			"name":"Thistle Tea",
+			"whid":38395
+		},
+		"thoughtsteal":{
+			"name":"Thoughtsteal",
+			"whid":30
+		},
+		"thrallmar farseer":{
+			"name":"Thrallmar Farseer",
+			"whid":765
+		},
+		"thunder bluff valiant":{
+			"name":"Thunder Bluff Valiant",
+			"whid":2615
+		},
+		"timber wolf":{
+			"name":"Timber Wolf",
+			"whid":606
+		},
+		"tinker's sharpsword oil":{
+			"name":"Tinker's Sharpsword Oil",
+			"whid":2095
+		},
+		"tinkertown technician":{
+			"name":"Tinkertown Technician",
+			"whid":2070
+		},
+		"tinkmaster":{
+			"name":"Tinkmaster",
+			"whid":570
+		},
+		"tinkmaster overspark":{
+			"name":"Tinkmaster Overspark",
+			"whid":570
+		},
+		"tiny knight of evil":{
+			"name":"Tiny Knight of Evil",
+			"whid":2777
+		},
+		"tirion":{
+			"name":"Tirion",
+			"whid":890
+		},
+		"tirion fordring":{
+			"name":"Tirion Fordring",
+			"whid":890
+		},
+		"tomb pillager":{
+			"name":"Tomb Pillager",
+			"whid":2884
+		},
+		"tomb spider":{
+			"name":"Tomb Spider",
+			"whid":2919
+		},
+		"toshley":{
+			"name":"Toshley",
+			"whid":2083
+		},
+		"totem golem":{
+			"name":"Totem Golem",
+			"whid":2610
+		},
+		"totemic might":{
+			"name":"Totemic Might",
+			"whid":830
+		},
+		"tournament attendee":{
+			"name":"Tournament Attendee",
+			"whid":2499
+		},
+		"tournament medic":{
+			"name":"Tournament Medic",
+			"whid":2575
+		},
+		"tracking":{
+			"name":"Tracking",
+			"whid":1047
+		},
+		"trade prince gallywix":{
+			"name":"Trade Prince Gallywix",
+			"whid":1993
+		},
+		"tree of life":{
+			"name":"Tree of Life",
+			"whid":2001
+		},
+		"troggzor the earthinator":{
+			"name":"Troggzor the Earthinator",
+			"whid":2086
+		},
+		"truesilver champion":{
+			"name":"Truesilver Champion",
+			"whid":847
+		},
+		"tundra rhino":{
+			"name":"Tundra Rhino",
+			"whid":699
+		},
+		"tunnel trogg":{
+			"name":"Tunnel Trogg",
+			"whid":2890
+		},
+		"tuskarr jouster":{
+			"name":"Tuskarr Jouster",
+			"whid":2504
+		},
+		"tuskarr totemic":{
+			"name":"Tuskarr Totemic",
+			"whid":2513
+		},
+		"twilight darkmender":{
+			"name":"Twilight Darkmender",
+			"whid":38429
+		},
+		"twilight drake":{
+			"name":"Twilight Drake",
+			"whid":1037
+		},
+		"twilight elder":{
+			"name":"Twilight Elder",
+			"whid":38868
+		},
+		"twilight flamecaller":{
+			"name":"Twilight Flamecaller",
+			"whid":38409
+		},
+		"twilight geomancer":{
+			"name":"Twilight Geomancer",
+			"whid":38864
+		},
+		"twilight guardian":{
+			"name":"Twilight Guardian",
+			"whid":2569
+		},
+		"twilight summoner":{
+			"name":"Twilight Summoner",
+			"whid":38833
+		},
+		"twilight whelp":{
+			"name":"Twilight Whelp",
+			"whid":2286
+		},
+		"twin emperor vek'lor":{
+			"name":"Twin Emperor Vek'lor",
+			"whid":38488
+		},
+		"twisted worgen":{
+			"name":"Twisted Worgen",
+			"whid":38781
+		},
+		"twisting nether":{
+			"name":"Twisting Nether",
+			"whid":859
+		},
+		"unbound elemental":{
+			"name":"Unbound Elemental",
+			"whid":774
+		},
+		"undercity huckster":{
+			"name":"Undercity Huckster",
+			"whid":39026
+		},
+		"undercity valiant":{
+			"name":"Undercity Valiant",
+			"whid":2767
+		},
+		"undertaker":{
+			"name":"Undertaker",
+			"whid":1910
+		},
+		"unearthed raptor":{
+			"name":"Unearthed Raptor",
+			"whid":2891
+		},
+		"unleash the hounds":{
+			"name":"Unleash the Hounds",
+			"whid":1243
+		},
+		"unstable ghoul":{
+			"name":"Unstable Ghoul",
+			"whid":1808
+		},
+		"unstable portal":{
+			"name":"Unstable Portal",
+			"whid":1929
+		},
+		"upgrade":{
+			"name":"Upgrade",
+			"whid":511
+		},
+		"upgraded repair bot":{
+			"name":"Upgraded Repair Bot",
+			"whid":2051
+		},
+		"usher of souls":{
+			"name":"Usher of Souls",
+			"whid":38898
+		},
+		"uth":{
+			"name":"UTH",
+			"whid":1243
+		},
+		"v-07-tr-0n":{
+			"name":"V-07-TR-0N",
+			"whid":2232
+		},
+		"validated doomsayer":{
+			"name":"Validated Doomsayer",
+			"whid":38669
+		},
+		"vancleef":{
+			"name":"VanCleef",
+			"whid":306
+		},
+		"vanish":{
+			"name":"Vanish",
+			"whid":196
+		},
+		"vaporize":{
+			"name":"Vaporize",
+			"whid":286
+		},
+		"varian":{
+			"name":"Varian",
+			"whid":2760
+		},
+		"varian wrynn":{
+			"name":"Varian Wrynn",
+			"whid":2760
+		},
+		"velen's chosen":{
+			"name":"Velen's Chosen",
+			"whid":1935
+		},
+		"venture co. mercenary":{
+			"name":"Venture Co. Mercenary",
+			"whid":1122
+		},
+		"vilefin inquisitor":{
+			"name":"Vilefin Inquisitor",
+			"whid":38227
+		},
+		"violet illusionist":{
+			"name":"Violet Illusionist",
+			"whid":39313
+		},
+		"violet teacher":{
+			"name":"Violet Teacher",
+			"whid":1029
+		},
+		"vitality totem":{
+			"name":"Vitality Totem",
+			"whid":2007
+		},
+		"void crusher":{
+			"name":"Void Crusher",
+			"whid":2537
+		},
+		"void terror":{
+			"name":"Void Terror",
+			"whid":1221
+		},
+		"voidcaller":{
+			"name":"Voidcaller",
+			"whid":1806
+		},
+		"voidwalker":{
+			"name":"Voidwalker",
+			"whid":48
+		},
+		"vol'jin":{
+			"name":"Vol'jin",
+			"whid":1931
+		},
+		"volcanic drake":{
+			"name":"Volcanic Drake",
+			"whid":2258
+		},
+		"volcanic lumberer":{
+			"name":"Volcanic Lumberer",
+			"whid":2295
+		},
+		"voltron":{
+			"name":"Voltron",
+			"whid":2232
+		},
+		"voodoo doctor":{
+			"name":"Voodoo Doctor",
+			"whid":132
+		},
+		"wailing soul":{
+			"name":"Wailing Soul",
+			"whid":1799
+		},
+		"war golem":{
+			"name":"War Golem",
+			"whid":712
+		},
+		"warbot":{
+			"name":"Warbot",
+			"whid":2019
+		},
+		"warhorse trainer":{
+			"name":"Warhorse Trainer",
+			"whid":2515
+		},
+		"warsong commander":{
+			"name":"Warsong Commander",
+			"whid":1009
+		},
+		"water elemental":{
+			"name":"Water Elemental",
+			"whid":395
+		},
+		"webspinner":{
+			"name":"Webspinner",
+			"whid":1860
+		},
+		"wee spellstopper":{
+			"name":"Wee Spellstopper",
+			"whid":2234
+		},
+		"whirling zap-o-matic":{
+			"name":"Whirling Zap-o-matic",
+			"whid":2005
+		},
+		"whirlwind":{
+			"name":"Whirlwind",
+			"whid":636
+		},
+		"wicked witchdoctor":{
+			"name":"Wicked Witchdoctor",
+			"whid":39190
+		},
+		"wild growth":{
+			"name":"Wild Growth",
+			"whid":1124
+		},
+		"wild pyromancer":{
+			"name":"Wild Pyromancer",
+			"whid":1014
+		},
+		"wildwalker":{
+			"name":"Wildwalker",
+			"whid":2786
+		},
+		"wilfred fizzlebang":{
+			"name":"Wilfred Fizzlebang",
+			"whid":2621
+		},
+		"windfury":{
+			"name":"Windfury",
+			"whid":51
+		},
+		"windfury harpy":{
+			"name":"Windfury Harpy",
+			"whid":567
+		},
+		"windspeaker":{
+			"name":"Windspeaker",
+			"whid":178
+		},
+		"wisp":{
+			"name":"Wisp",
+			"whid":179
+		},
+		"wisps of the old gods":{
+			"name":"Wisps of the Old Gods",
+			"whid":38655
+		},
+		"wobbling runts":{
+			"name":"Wobbling Runts",
+			"whid":2961
+		},
+		"wolfrider":{
+			"name":"Wolfrider",
+			"whid":289
+		},
+		"worgen infiltrator":{
+			"name":"Worgen Infiltrator",
+			"whid":994
+		},
+		"wrath":{
+			"name":"Wrath",
+			"whid":836
+		},
+		"wrathguard":{
+			"name":"Wrathguard",
+			"whid":2623
+		},
+		"wyrmrest agent":{
+			"name":"Wyrmrest Agent",
+			"whid":2596
+		},
+		"xaril, poisoned mind":{
+			"name":"Xaril, Poisoned Mind",
+			"whid":38403
+		},
+		"y'shaarj":{
+			"name":"Y'Shaarj",
+			"whid":38312
+		},
+		"y'shaarj, rage unbound":{
+			"name":"Y'Shaarj, Rage Unbound",
+			"whid":38312
+		},
+		"yogg":{
+			"name":"Yogg",
+			"whid":38505
+		},
+		"yogg-saron":{
+			"name":"Yogg-Saron",
+			"whid":38505
+		},
+		"yogg-saron, hope's end":{
+			"name":"Yogg-Saron, Hope's End",
+			"whid":38505
+		},
+		"young dragonhawk":{
+			"name":"Young Dragonhawk",
+			"whid":641
+		},
+		"young priestess":{
+			"name":"Young Priestess",
+			"whid":1634
+		},
+		"youthful brewmaster":{
+			"name":"Youthful Brewmaster",
+			"whid":415
+		},
+		"ysera":{
+			"name":"Ysera",
+			"whid":1186
+		},
+		"yshaarj":{
+			"name":"YShaarj",
+			"whid":38312
+		},
+		"zealous initiate":{
+			"name":"Zealous Initiate",
+			"whid":38541
+		},
+		"zombie chow":{
+			"name":"Zombie Chow",
+			"whid":1753
+		},
+		"zoobot":{
+			"name":"Zoobot",
+			"whid":39839
 		}
-	};
+	}
 }
